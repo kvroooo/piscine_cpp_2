@@ -6,7 +6,7 @@
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 15:21:49 by smlamali          #+#    #+#             */
-/*   Updated: 2024/05/01 17:42:34 by smlamali         ###   ########.fr       */
+/*   Updated: 2024/05/01 17:43:37 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,6 @@
 Bureaucrat::Bureaucrat() : name("Bob"), grade(1)
 {
 	std::cout << BPNK << "default COSNTRUCTOR Bureaucrat called !" << RST << std::endl;
-}
-
-Bureaucrat::Bureaucrat(std::string nom, int note) : name(nom), grade(note)
-{
-	std::cout << BPNK << "parametric COSNTRUCTOR Bureaucrat called !" << RST << std::endl;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat & b)
