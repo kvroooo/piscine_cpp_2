@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/02 17:00:55 by smlamali          #+#    #+#             */
-/*   Updated: 2024/04/02 18:21:59 by smlamali         ###   ########.fr       */
+/*   Created: 2024/05/01 15:21:22 by smlamali          #+#    #+#             */
+/*   Updated: 2024/05/01 16:14:49 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,26 @@
 
 #include <iostream>
 #include <string>
-#include "../colors.hpp"
+
+#include "colors.hpp"
 
 class Bureaucrat
 {
 private:
-	int					grade;
-	const std::string 	name;
+	const std::string name;
+	int grade;
 
 public:
 	Bureaucrat();
-	Bureaucrat(const std::string Name, int Grade);
 	~Bureaucrat();
+	Bureaucrat(const Bureaucrat & b);
 
-	void		upGrade(void);
-	void		lowGrade(void);
-	int			getGrade(void) const;
-	void		setGrade(int Grade);
+	Bureaucrat & operator=(const Bureaucrat & b);
+
 	std::string	getName(void) const;
-
-	void		tooHigh(void);
-	void		tooLow(void);
+	int			getGrade(void) const;
+	void		increment(void);
+	void		decrement(void);
 };
 
-std::ostream & operator << (std::ostream& o, const Bureaucrat & bureaucrat);
+std::ostream & operator<< (std::ostream & o, const Bureaucrat & b);

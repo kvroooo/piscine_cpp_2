@@ -5,30 +5,32 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/02 16:59:04 by smlamali          #+#    #+#             */
-/*   Updated: 2024/04/02 18:27:52 by smlamali         ###   ########.fr       */
+/*   Created: 2024/05/01 15:21:06 by smlamali          #+#    #+#             */
+/*   Updated: 2024/05/01 17:21:42 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include <exception>
+#include <iostream>
 
 int main(void)
 {
-	Bureaucrat him("Lui", 3);
+	Bureaucrat plop;
 
-	std::cout << BPNK << "---- START ----" << RST << std::endl;
-	std::cout << him << std::endl;
 	try
 	{
-		him.upGrade();
-		him.upGrade();
-		him.upGrade();
+		std::cout << plop;
+
+		plop.decrement();
+		plop.increment();
+		plop.increment();
 	}
-	catch (GradeTooLowException& e)
+	catch (std::exception & e)
 	{
-		std::cout << BGRN << e.what() << RST << std::endl;
+		std::cout << BGRN << "OOOOOPS !" << std::endl;
+		std::cout << e.what() << RST << std::endl;
 	}
-		
-	return 0;
+	
+	std::cout << plop;
 }
