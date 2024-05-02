@@ -6,7 +6,7 @@
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 15:21:22 by smlamali          #+#    #+#             */
-/*   Updated: 2024/05/01 16:14:49 by smlamali         ###   ########.fr       */
+/*   Updated: 2024/05/02 15:58:33 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ private:
 public:
 	Bureaucrat();
 	~Bureaucrat();
+	Bureaucrat(std::string name, int note);
 	Bureaucrat(const Bureaucrat & b);
 
 	Bureaucrat & operator=(const Bureaucrat & b);
@@ -34,6 +35,23 @@ public:
 	int			getGrade(void) const;
 	void		increment(void);
 	void		decrement(void);
+
+	class	GradeTooHighException : public std::exception
+	{
+		public :
+			virtual const char * what() const throw()
+			{ 
+				return ("grade too high");
+			}
+	};
+
+	class GradeTooLowException : public std::exception 
+	{
+		virtual const char * what() const throw()
+		{
+			return ("grade too low");
+		}
+	};
 };
 
 std::ostream & operator<< (std::ostream & o, const Bureaucrat & b);

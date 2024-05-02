@@ -1,20 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                           :+:      :+:    :+:   */
+/*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 17:28:57 by smlamali          #+#    #+#             */
-/*   Updated: 2024/05/02 17:32:00 by smlamali         ###   ########.fr       */
+/*   Updated: 2024/05/02 17:31:43 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #pragma once
 
 #include "Bureaucrat.hpp"
 
-class Form
+class AForm
 {
 private:
 	bool 		sign;
@@ -23,19 +24,19 @@ private:
 	const int 	grade_e;
 
 public:
-	Form();
-	~Form();
-	Form(std::string name, int s, int e);
-	Form(const Form & f);
+	AForm();
+	~AForm();
+	AForm(std::string name, int s, int e);
+	AForm(const AForm & f);
 
-	Form & operator=(const Form & f);
+	AForm & operator=(const AForm & f);
 
 	std::string getName(void)const;
 	int			getGrade_e(void)const;
 	int			getGrade_s(void)const;
 	bool		getSign(void)const;
 	void 		beSigned(const Bureaucrat & b);
-	void		signForm(const Bureaucrat & b);
+	void		signAForm(const Bureaucrat & b);
 
 	class	GradeTooHighException : public std::exception
 	{
@@ -54,4 +55,4 @@ public:
 	};
 };
 
-std::ostream & operator<<(std::ostream & o, const Form & f);
+std::ostream & operator<<(std::ostream & o, const AForm & f);
