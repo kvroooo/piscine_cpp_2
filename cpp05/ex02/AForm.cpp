@@ -6,7 +6,7 @@
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 17:29:08 by smlamali          #+#    #+#             */
-/*   Updated: 2024/05/02 17:53:31 by smlamali         ###   ########.fr       */
+/*   Updated: 2024/05/03 17:10:00 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,11 @@ void	AForm::signAForm(const Bureaucrat & b)
 std::string AForm::getName(void) const
 {
 	return this->name;
+}
+
+void	AForm::execute(const Bureaucrat & executor) const
+{
+	if ()
 }
 
 AForm::~AForm()

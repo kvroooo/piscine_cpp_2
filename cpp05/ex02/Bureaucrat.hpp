@@ -6,7 +6,7 @@
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 15:21:22 by smlamali          #+#    #+#             */
-/*   Updated: 2024/05/02 15:56:13 by smlamali         ###   ########.fr       */
+/*   Updated: 2024/05/03 16:53:47 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include <iostream>
 #include <string>
 
+#include "AForm.hpp"
 #include "colors.hpp"
 
 class Bureaucrat
@@ -35,7 +36,7 @@ public:
 	int			getGrade(void) const;
 	void		increment(void);
 	void		decrement(void);
-
+	void		executeForm(AForm const & form);
 	class	GradeTooHighException : public std::exception
 	{
 		public :

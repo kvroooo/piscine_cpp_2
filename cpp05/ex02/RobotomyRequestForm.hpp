@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/01 15:21:06 by smlamali          #+#    #+#             */
-/*   Updated: 2024/05/03 15:50:18 by smlamali         ###   ########.fr       */
+/*   Created: 2024/05/03 16:05:38 by smlamali          #+#    #+#             */
+/*   Updated: 2024/05/03 16:40:30 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
 #include "AForm.hpp"
-#include "ShrubberyCreationForm.hpp"
-#include <exception>
-#include <iostream>
 
-int main(void)
-{	
-	ShrubberyCreationForm ploup("home");
+class RobotomyRequestForm : public AForm
+{
+private:
+	std::string target;
+public:
+	RobotomyRequestForm();
+	~RobotomyRequestForm();
+	RobotomyRequestForm(std::string target);
+	RobotomyRequestForm(const RobotomyRequestForm & r);
 
-	ploup.ft_tree();
-}
+	RobotomyRequestForm & operator=(const RobotomyRequestForm & r);
+
+	std::string	getTarget(void) const;
+	void		ft_inform(void) const;
+};

@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   truc.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/01 15:21:06 by smlamali          #+#    #+#             */
-/*   Updated: 2024/05/03 15:50:18 by smlamali         ###   ########.fr       */
+/*   Created: 2024/05/03 15:03:58 by smlamali          #+#    #+#             */
+/*   Updated: 2024/05/03 16:40:29 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
-#include "AForm.hpp"
-#include "ShrubberyCreationForm.hpp"
-#include <exception>
 #include <iostream>
-
+#include "colors.hpp"
 int main(void)
-{	
-	ShrubberyCreationForm ploup("home");
-
-	ploup.ft_tree();
+{
+	std::cout << BGRN << "    &&&&&" << std::endl;
+	std::cout 		  << "  &&&&&&&&&" << std::endl;
+	std::cout 		  << "&&&&&&&&&&&&&&" << std::endl;
+	std::cout 		  << " &&&&&&&&&&&&" << std::endl;
+	std::cout 		  << "     ||" << std::endl;
+	std::cout 		  << "     ||/" << std::endl;
+	std::cout 		  << "     ||" << RST << std::endl;
 }

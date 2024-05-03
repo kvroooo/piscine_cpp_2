@@ -6,7 +6,7 @@
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 17:28:42 by smlamali          #+#    #+#             */
-/*   Updated: 2024/05/02 18:09:53 by smlamali         ###   ########.fr       */
+/*   Updated: 2024/05/03 15:34:41 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,6 @@ public:
 
 	ShrubberyCreationForm & operator=(const ShrubberyCreationForm & s);
 
+	std::string getTarget(void) const;
 	void	ft_tree(void);
 };
