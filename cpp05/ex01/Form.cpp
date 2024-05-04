@@ -6,7 +6,7 @@
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 17:29:08 by smlamali          #+#    #+#             */
-/*   Updated: 2024/05/02 17:00:43 by smlamali         ###   ########.fr       */
+/*   Updated: 2024/05/04 13:58:19 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "Bureaucrat.hpp"
 #include "colors.hpp"
 
-Form::Form() : sign(false), name("Bob"), grade_s(150), grade_e(1)
+Form::Form() : sign(false), name("Bob"), grade_s(150), grade_e(150)
 {
 	std::cout << GRN << "default CONSTRUCTOR Form " << name << " called !" << RST << std::endl;
 }

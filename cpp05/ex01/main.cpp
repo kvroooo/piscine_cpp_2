@@ -6,7 +6,7 @@
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 15:21:06 by smlamali          #+#    #+#             */
-/*   Updated: 2024/05/02 17:21:37 by smlamali         ###   ########.fr       */
+/*   Updated: 2024/05/04 14:01:46 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@
 #include <iostream>
 
 int main(void)
-{	
+{
+	// }	
 	// {
 	// 	try
 	// 	{
@@ -76,4 +77,17 @@ int main(void)
 	// 		std::cout << e.what() << RST << std::endl;
 	// 	}
 	// }
+	// {
+	// 	try
+	// 	{
+	// 		Form	a("Sam", 10, 15);
+	// 		Form b = a;
+
+	// 		std::cout << a;
+	// 		std::cout << a;
+	// 	}
+	// 	catch (std::exception & e)
+	// 	{
+			//fail
+	// 	}
 }

@@ -6,7 +6,7 @@
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 17:29:08 by smlamali          #+#    #+#             */
-/*   Updated: 2024/05/04 14:57:30 by smlamali         ###   ########.fr       */
+/*   Updated: 2024/05/04 17:16:36 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,9 @@ std::string AForm::getName(void) const
 
 void	AForm::execute(const Bureaucrat & executor) const
 {
+	if (sign == 0)
+		//exception
+	
 }
 
 AForm::~AForm()

@@ -6,7 +6,7 @@
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 17:28:38 by smlamali          #+#    #+#             */
-/*   Updated: 2024/05/04 14:34:31 by smlamali         ###   ########.fr       */
+/*   Updated: 2024/05/04 16:40:31 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,10 @@ std::string ShrubberyCreationForm::getTarget(void) const
 	return target;
 }
 
-void	ShrubberyCreationForm::ft_tree(int sign, int exec)
 {
 	if (sign > 145 || exec > 137)
 	{
-		throw GradeTooLowException();
+		throw GradeTooLowException(); //TO DO: change to custom exception
 		return ;
 	}
 
