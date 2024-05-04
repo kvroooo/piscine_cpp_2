@@ -6,7 +6,7 @@
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 16:05:38 by smlamali          #+#    #+#             */
-/*   Updated: 2024/05/03 16:40:30 by smlamali         ###   ########.fr       */
+/*   Updated: 2024/05/04 14:30:24 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,5 @@ public:
 	RobotomyRequestForm & operator=(const RobotomyRequestForm & r);
 
 	std::string	getTarget(void) const;
-	void		ft_inform(void) const;
+	void		ft_inform(int sign, int exec) const;
 };

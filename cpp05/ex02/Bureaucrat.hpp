@@ -6,7 +6,7 @@
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 15:21:22 by smlamali          #+#    #+#             */
-/*   Updated: 2024/05/03 16:53:47 by smlamali         ###   ########.fr       */
+/*   Updated: 2024/05/04 14:30:07 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,9 @@
 #include <iostream>
 #include <string>
 
-#include "AForm.hpp"
 #include "colors.hpp"
+
+class AForm;
 
 class Bureaucrat
 {

@@ -6,13 +6,14 @@
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 17:29:08 by smlamali          #+#    #+#             */
-/*   Updated: 2024/05/03 17:10:00 by smlamali         ###   ########.fr       */
+/*   Updated: 2024/05/04 14:57:30 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "AForm.hpp"
 #include "Bureaucrat.hpp"
+#include "ShrubberyCreationForm.hpp"
 #include "colors.hpp"
 
 AForm::AForm() : sign(false), name("Bob"), grade_s(150), grade_e(1)
@@ -87,7 +88,6 @@ std::string AForm::getName(void) const
 
 void	AForm::execute(const Bureaucrat & executor) const
 {
-	if ()
 }
 
 AForm::~AForm()

@@ -6,7 +6,7 @@
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 16:08:21 by smlamali          #+#    #+#             */
-/*   Updated: 2024/05/03 16:41:07 by smlamali         ###   ########.fr       */
+/*   Updated: 2024/05/04 14:35:09 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,18 @@ std::string RobotomyRequestForm::getTarget(void) const
 	return target;
 }
 
-void RobotomyRequestForm::ft_inform(void) const
+void RobotomyRequestForm::ft_inform(int sign, int info) const
 {
-	std::cout << BCYN << "*DRRRRRRRRRRRRRRRRRRRRRRRRRRRRR*" << std::endl;
-	std::cout << target << " has been successfully 50%% of time ^^" << RST<< std::endl;
-	// what if not successfull ???
+	if (sign <= 72 || info <= 45)
+	{
+		std::cout << BCYN << "*DRRRRRRRRRRRRRRRRRRRRRRRRRRRRR*" << std::endl;
+		std::cout << target << " has been successfully 50%% of time ^^" << RST<< std::endl;
+	}
+	else
+	{
+		std::cout << BCYN << "the robotomy failed";
+		throw GradeTooLowException();
+	}
 }
 
 RobotomyRequestForm::~RobotomyRequestForm()
