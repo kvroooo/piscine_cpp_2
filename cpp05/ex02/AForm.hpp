@@ -25,7 +25,7 @@ private:
 
 public:
 	AForm();
-	~AForm();
+	virtual ~AForm();
 	AForm(std::string name, int s, int e);
 	AForm(const AForm & f);
 
@@ -37,7 +37,7 @@ public:
 	bool		getSign(void)const;
 	void 		beSigned(const Bureaucrat & b);
 	void		signAForm(const Bureaucrat & b);
-	void		execute(const Bureaucrat & executor) const;
+	virtual void		execute(const Bureaucrat & executor) const = 0;
 
 	class	GradeTooHighException : public std::exception
 	{

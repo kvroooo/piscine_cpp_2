@@ -88,9 +88,7 @@ std::string AForm::getName(void) const
 
 void	AForm::execute(const Bureaucrat & executor) const
 {
-	if (sign == 0)
-		//exception
-	
+	(void)executor;
 }
 
 AForm::~AForm()

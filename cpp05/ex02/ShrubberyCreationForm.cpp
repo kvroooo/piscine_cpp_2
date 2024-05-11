@@ -24,7 +24,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : target(target
 	std::cout << GRN << "default CONSTRUCTOR Shrubberry called !" << RST << std::endl;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm & s) 
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm & s) : AForm(s)
 {
 	std::cout << "copy CONSTRUCTOR Shrub called" << RST << std::endl;
 	*this = s;
@@ -42,6 +42,7 @@ std::string ShrubberyCreationForm::getTarget(void) const
 	return target;
 }
 
+void	ShrubberyCreationForm::ft_tree(int sign, int exec) const
 {
 	if (sign > 145 || exec > 137)
 	{
