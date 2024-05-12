@@ -25,7 +25,6 @@ public:
 
 	PresidentialPardonForm & operator=(const PresidentialPardonForm & p);
 
-	std::string getTarget(void) const;
-	void		ft_forgive(int sign, int exec) const;
-
+	std::string 	getTarget(void) const;
+	virtual void	execute(const Bureaucrat & executor) const;
 };

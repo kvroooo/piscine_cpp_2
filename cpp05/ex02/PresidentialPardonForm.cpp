@@ -17,15 +17,16 @@ PresidentialPardonForm::PresidentialPardonForm()
 	std::cout<<GRN<<"default CONSTRUCTOR PresidentialPardonForm called" <<RST<< std::endl;
 }
 
-PresidentialPardonForm::PresidentialPardonForm(std::string target) : target(target)
+PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm("PresidentialPardonForm", 25, 5), target(target)
 {
 	std::cout<<GRN<<"parametric CONSTRUCTOR PresidentialPardonForm called" <<RST<< std::endl;
 }
 
 
-PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm & r)
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm & r) : AForm(r)
 {
 	std::cout<<GRN<<"copy CONSTRUCTOR PresidentialPardonForm called !" <<RST<< std::endl;
+	*this = r;
 }
 
 PresidentialPardonForm & PresidentialPardonForm::operator=(const PresidentialPardonForm & r)
@@ -40,12 +41,20 @@ std::string PresidentialPardonForm::getTarget(void) const
 	return target;
 }
 
-void PresidentialPardonForm::ft_forgive(int sign, int exec) const
+void	PresidentialPardonForm::execute(const Bureaucrat & executor) const
 {
-	if (sign <= 25 && exec <= 5)
+	if (executor.getGrade() > this->getGrade_e() || this->getSign() == false)
+	{
+		throw GradeTooLowException();
+		return ;
+	}
+	int static i;
+	std::cout << "i=" << i << std::endl;
+	if (i%2==0)
 		std::cout << BGRN << "* " << target << " has been pardoned by Zaphod Beeblebrox*" << RST<< std::endl;
 	else
-		std::cout << BGRN << "seen your grades.. +you can´t ask for forgivness" << RST << std::endl;
+		std::cout << BGRN << "sorry bud..you can't ask for forgivness" << RST << std::endl;
+	i++;
 }
 
 PresidentialPardonForm::~PresidentialPardonForm()

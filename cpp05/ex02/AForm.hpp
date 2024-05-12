@@ -31,13 +31,13 @@ public:
 
 	AForm & operator=(const AForm & f);
 
-	std::string getName(void)const;
-	int			getGrade_e(void)const;
-	int			getGrade_s(void)const;
-	bool		getSign(void)const;
-	void 		beSigned(const Bureaucrat & b);
-	void		signAForm(const Bureaucrat & b);
-	virtual void		execute(const Bureaucrat & executor) const = 0;
+	std::string 	getName(void)const;
+	int				getGrade_e(void)const;
+	int				getGrade_s(void)const;
+	bool			getSign(void)const;
+	void 			beSigned(const Bureaucrat & b);
+	void			signAForm(const Bureaucrat & b);
+	virtual void	execute(const Bureaucrat & executor) const = 0;
 
 	class	GradeTooHighException : public std::exception
 	{

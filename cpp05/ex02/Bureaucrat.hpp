@@ -12,10 +12,12 @@
 
 #pragma once
 
-#include <iostream>
-#include <string>
-
 #include "colors.hpp"
+
+#include <string>
+#include <exception>
+#include <iostream>
+#include <ostream>
 
 class AForm;
 

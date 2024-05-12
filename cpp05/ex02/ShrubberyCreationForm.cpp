@@ -19,7 +19,7 @@ ShrubberyCreationForm::ShrubberyCreationForm()
 	std::cout << GRN << "default CONSTRUCTOR Shrubberry called !" << RST << std::endl;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : target(target)
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm ("ShrubberyRequestForm", 145, 137), target(target)
 {
 	std::cout << GRN << "default CONSTRUCTOR Shrubberry called !" << RST << std::endl;
 }
@@ -42,9 +42,9 @@ std::string ShrubberyCreationForm::getTarget(void) const
 	return target;
 }
 
-void	ShrubberyCreationForm::ft_tree(int sign, int exec) const
+void ShrubberyCreationForm::execute(const Bureaucrat & executor) const
 {
-	if (sign > 145 || exec > 137)
+	if (executor.getGrade() > this->getGrade_e() || this->getSign() == false)
 	{
 		throw GradeTooLowException(); //TO DO: change to custom exception
 		return ;

@@ -25,5 +25,5 @@ public:
 	RobotomyRequestForm & operator=(const RobotomyRequestForm & r);
 
 	std::string	getTarget(void) const;
-	void		ft_inform(int sign, int exec) const;
+	virtual void	execute(const Bureaucrat & executor) const;
 };

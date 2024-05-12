@@ -28,6 +28,6 @@ public:
 
 	ShrubberyCreationForm & operator=(const ShrubberyCreationForm & s);
 
-	std::string getTarget(void) const;
-	void	ft_tree(int sign, int exec);
+	std::string 	getTarget(void) const;
+	virtual void	execute(const Bureaucrat & executor) const;
 };

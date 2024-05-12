@@ -18,8 +18,15 @@
 
 int main(void)
 {	
-	// ShrubberyCreationForm ploup("home");
-
-	// ploup.ft_tree();
-	// AForm ploup;
+	try
+	{
+		ShrubberyCreationForm ploup("boing");
+		Bureaucrat blip("blip", 150);
+		ploup.execute(blip);
+		// AForm ploup;
+	}catch (std::exception & e)
+	{
+		std::cout << "oh" << std::endl;
+		std::cout << e.what() << RST << std::endl;
+	}
 }

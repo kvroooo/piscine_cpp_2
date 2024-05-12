@@ -11,10 +11,6 @@
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "colors.hpp"
-#include <exception>
-#include <iostream>
-#include <ostream>
 
 Bureaucrat::Bureaucrat() : name("Bob"), grade(1)
 {
