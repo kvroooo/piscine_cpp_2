@@ -44,12 +44,16 @@ std::string ShrubberyCreationForm::getTarget(void) const
 
 void ShrubberyCreationForm::execute(const Bureaucrat & executor) const
 {
-	if (executor.getGrade() > this->getGrade_e() || this->getSign() == false)
+	if (executor.getGrade() > this->getGrade_e())
 	{
-		throw GradeTooLowException(); //TO DO: change to custom exception
+		throw GradeTooLowException();
 		return ;
 	}
-
+	else if (this->getSign() == false)
+	{
+		throw FormNotSignedException();
+		return ;
+	}
 	const std::string name = target + "_shrubbery";
 	std::fstream o;
 

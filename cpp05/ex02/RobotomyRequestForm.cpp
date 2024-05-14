@@ -43,16 +43,23 @@ std::string RobotomyRequestForm::getTarget(void) const
 
 void	RobotomyRequestForm::execute(const Bureaucrat & executor) const
 {
-	if (executor.getGrade() <= this->getGrade_e() || this->getSign() == false)
+	if (executor.getGrade() > this->getGrade_e())
 	{
-		std::cout << BCYN << "*DRRRRRRRRRRRRRRRRRRRRRRRRRRRRR*" << std::endl;
-		std::cout << target << " has been successfully 50%% of time ^^" << RST<< std::endl;
-	}
-	else
-	{
-		std::cout << BCYN << "the robotomy failed";
 		throw GradeTooLowException();
+		return ;
 	}
+	else if (this->getSign() == false)
+	{
+		throw FormNotSignedException();
+		return ;
+	}
+	int static i;
+
+	if (i%2==0)
+		std::cout << BCYN << "*DRRRRRRRRRRRRRRRRRRRRRRRRRRRRR*" << RST<< std::endl;
+	else
+		std::cout <<BCYN << "srry.. " << target << " has been successfully 50%% of time ^^" << RST<< std::endl;
+	i++;
 }
 
 RobotomyRequestForm::~RobotomyRequestForm()

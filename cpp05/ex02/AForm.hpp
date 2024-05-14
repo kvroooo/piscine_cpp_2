@@ -47,12 +47,20 @@ public:
 				return ("grade too high!");
 			}
 	};
-	class GradeTooLowException : public std::exception 
+	class GradeTooLowException : public std::exception
 	{
 		virtual const char * what() const throw()
 		{
 			return ("grade too low!");
 		}
+	};
+	class FormNotSignedException : public std::exception
+	{
+		public :
+			virtual const char *what() const throw()
+			{
+				return ("form not signed !");
+			}
 	};
 };
 

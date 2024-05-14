@@ -68,7 +68,10 @@ void AForm::beSigned(const Bureaucrat & b)
 {
 	std::cout << BCYN << b.getName() << " try to sign " << name << "..." << RST << std::endl;
 	if (b.getGrade() <= grade_s)
+	{
 		sign = 1;
+		std::cout << BCYN << this->getName() << " successfully signed !" << RST << std::endl;
+	}
 	else
 	   throw GradeTooLowException();  
 }

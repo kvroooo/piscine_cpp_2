@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "AForm.hpp"
 
 Bureaucrat::Bureaucrat() : name("Bob"), grade(1)
 {
@@ -68,6 +69,20 @@ void	Bureaucrat::decrement(void) //plus 1
 	else
 		grade += 1;
 	std::cout << *this;
+}
+
+void	Bureaucrat::executeForm(AForm const & form)
+{
+	try
+	{
+		form.execute(*this);
+		std::cout << BCYN << name << " executed " << form.getName() << "!!" << RST << std::endl;
+	}
+	catch (std::exception & e)
+	{
+		std::cout << "execution failed" << std::endl;
+		std::cout << e.what() << RST << std::endl;
+	}
 }
 
 std::ostream & operator<<(std::ostream & o, const Bureaucrat & b)
