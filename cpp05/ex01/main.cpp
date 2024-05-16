@@ -6,7 +6,7 @@
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 15:21:06 by smlamali          #+#    #+#             */
-/*   Updated: 2024/05/04 14:01:46 by smlamali         ###   ########.fr       */
+/*   Updated: 2024/05/16 16:12:40 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,23 @@
 
 int main(void)
 {
-	// }	
-	// {
-	// 	try
-	// 	{
-	// 		Form sam("Kuro", 1, 5);
-	// 		std::cout << sam;
-	// 	}
-	// 	catch (std::exception & e)
-	// 	{
-	// 		std::cout << BCYN << "OOOOOPS !" << std::endl;
-	// 		std::cout << e.what() << RST << std::endl;
-	// 	}
-	// }
+	{
+		try
+		{
+			Bureaucrat plop("popo", 10);
+			Form sam("Kuro", 1, 5);
+
+			std::cout << sam;
+			sam.signForm(plop);
+			sam.beSigned(plop);
+			sam.signForm(plop);
+		}
+		catch (std::exception & e)
+		{
+			std::cout << e.what() << RST << std::endl;
+		}
+	}
+
 	// {
 	// 	try
 	// 	{
