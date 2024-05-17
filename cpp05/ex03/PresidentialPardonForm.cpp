@@ -12,19 +12,19 @@
 
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm() : AForm("PresidentialPardonForm", 25, 5)
+PresidentialPardonForm::PresidentialPardonForm() : Form("PresidentialPardonForm", 25, 5)
 {
 	std::cout<<GRN<<"default CONSTRUCTOR PresidentialPardonForm called" <<RST<< std::endl;
 	target = "default";
 }
 
-PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm("PresidentialPardonForm", 25, 5), target(target)
+PresidentialPardonForm::PresidentialPardonForm(std::string target) : Form("PresidentialPardonForm", 25, 5), target(target)
 {
 	std::cout<<GRN<<"parametric CONSTRUCTOR PresidentialPardonForm called" <<RST<< std::endl;
 }
 
 
-PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm & r) : AForm(r)
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm & r) : Form(r)
 {
 	std::cout<<GRN<<"copy CONSTRUCTOR PresidentialPardonForm called !" <<RST<< std::endl;
 	*this = r;

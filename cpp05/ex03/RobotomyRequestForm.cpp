@@ -12,19 +12,19 @@
 
 #include "RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm() : AForm("RobotomyRequestForm", 72, 45)
+RobotomyRequestForm::RobotomyRequestForm() : Form("RobotomyRequestForm", 72, 45)
 {
 	std::cout<<CYN<<"default CONSTRUCTOR RobotomyRequestForm called" <<RST<< std::endl;
 	target = "default";
 }
 
-RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("RobotomyRequestForm", 72, 45), target(target)
+RobotomyRequestForm::RobotomyRequestForm(std::string target) : Form("RobotomyRequestForm", 72, 45), target(target)
 {
 	std::cout<<CYN<<"parametric CONSTRUCTOR RobotomyRequestForm called" <<RST<< std::endl;
 }
 
 
-RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm & r) : AForm(r)
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm & r) : Form(r)
 {
 	std::cout<<CYN<<"copy CONSTRUCTOR RobotomyRequestForm called !" <<RST<< std::endl;
 	*this = r;

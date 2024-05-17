@@ -29,33 +29,43 @@ Intern::Intern(const Intern & i)
 Intern & Intern::operator=(const Intern & i)
 {
 	std::cout << "copy assignement operator Intern called" << std::endl;
+	(void)i;
 	return *this;
 }
-
-AForm * Intern::makeForm(std::string name, std::string target)
+void	Intern::setTab(const std::string &target)
 {
+	f[0] = new RobotomyRequestForm(target);
+	f[1] = new ShrubberyCreationForm(target);
+	f[2] = new PresidentialPardonForm(target);
+}
+Form * Intern::makeForm(const std::string &name, const std::string &target)
+{
+	int i;
 	std::cout << "Intern creates " << name << std::endl; 
 
-	// AForm	*form;
-	const static std::string list[] = {"robotomy request", "shrubbery creation", "presidential pardon"};
-	// void (AForm::*t[])(void) = {&RobotomyRequestForm::RobotomyRequestForm(name), &ShrubberyCreationForm(name), PresidentialPardonForm(name)}; //TODO: huh?
-	if (name.empty())
-	{
-		std::cout << BGRN << "no form given" << RST << std::endl;
-		return NULL;
-	}
-
-	for (int i=0; i<3; i++)
+	// if (name.empty() || target.empty())
+	// {
+	// 	throw WrongStrException();
+	// 	return NULL;
+	// }
+	this->setTab(target);
+	const static std::string list[] = {"robotomy request", 
+				"shrubbery creation", "presidential pardon"};
+	for (i=0;i<3; i++)
 	{
 		if (name == list[i])
-		{
-		// return t[i];
-		}
+			return f[i];
 	}
+	std::cout << BGRN << "Form " << name << " doesn't exist in our data !" << RST << std::endl; 	
 	return NULL;
 }
-
+//test
 Intern::~Intern()
 {
+	for (int i = 0; i<3; i++)
+	{
+		if (f[i])
+			delete f[i];
+	}
 	std::cout << "default DESTRUCTOR Intern called!" << std::endl;
 }

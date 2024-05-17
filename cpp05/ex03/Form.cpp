@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AForm.cpp                                          :+:      :+:    :+:   */
+/*   Form.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -11,60 +11,60 @@
 /* ************************************************************************** */
 
 
-#include "AForm.hpp"
+#include "Form.hpp"
 #include "Bureaucrat.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "colors.hpp"
 
-AForm::AForm() : sign(false), name("Bob"), grade_s(150), grade_e(1)
+Form::Form() : sign(false), name("Bob"), grade_s(150), grade_e(1)
 {
-	std::cout << GRN << "default CONSTRUCTOR AForm " << name << " called !" << RST << std::endl;
+	std::cout << GRN << "default CONSTRUCTOR Form " << name << " called !" << RST << std::endl;
 }
 
-AForm::AForm(std::string name, int s, int e) : sign(false), name(name), grade_s(s), grade_e(e)
+Form::Form(std::string name, int s, int e) : sign(false), name(name), grade_s(s), grade_e(e)
 {
-	std::cout << GRN << "parametric CONSTRUCTOR AForm " << name << " called !" << RST << std::endl;
+	std::cout << GRN << "parametric CONSTRUCTOR Form " << name << " called !" << RST << std::endl;
 	if (s < 1 || e < 1)
 		throw GradeTooHighException();
 	else if (s > 150 || e > 150)
 		throw GradeTooLowException();
 }
 
-AForm::AForm(const AForm & f) : name(f.getName()), grade_s(f.getGrade_s()), grade_e(f.getGrade_e()) 
+Form::Form(const Form & f) : name(f.getName()), grade_s(f.getGrade_s()), grade_e(f.getGrade_e()) 
 {
-	std::cout << GRN << "copy CONSTRUCTOR AForm called !" << RST << std::endl;
+	std::cout << GRN << "copy CONSTRUCTOR Form called !" << RST << std::endl;
 	*this = f;
 }
 
-AForm & AForm::operator=(const AForm & f)
+Form & Form::operator=(const Form & f)
 {
-	std::cout << "copy operator assignement AForm called" << RST << std::endl;
+	std::cout << "copy operator assignement Form called" << RST << std::endl;
 	this->sign = f.getSign();
 	return *this;
 }
 
-std::ostream & operator<<(std::ostream & o, const AForm & f)
+std::ostream & operator<<(std::ostream & o, const Form & f)
 {
 	o << BGRN << f.getName() << " -> signed : " << f.getSign() << " | grade to sign : " << f.getGrade_s() << " | grade to execute : " << f.getGrade_e() << RST << std::endl;
 	return o;
 }
 
-int AForm::getGrade_e(void) const
+int Form::getGrade_e(void) const
 {
 	return this->grade_e;
 }
 
-int AForm::getGrade_s(void) const
+int Form::getGrade_s(void) const
 {
 	return this->grade_s;
 }
 
-bool AForm::getSign(void) const
+bool Form::getSign(void) const
 {
 	return this->sign;
 }
 
-void AForm::beSigned(const Bureaucrat & b)
+void Form::beSigned(const Bureaucrat & b)
 {
 	std::cout << BCYN << b.getName() << " try to sign " << name << "..." << RST << std::endl;
 	if (b.getGrade() <= grade_s)
@@ -76,7 +76,7 @@ void AForm::beSigned(const Bureaucrat & b)
 	   throw GradeTooLowException();  
 }
 
-void	AForm::signAForm(const Bureaucrat & b)
+void	Form::signForm(const Bureaucrat & b)
 {
 	if (sign == 1)
 		std::cout << b.getName() << " signed " << name << std::endl;
@@ -84,17 +84,17 @@ void	AForm::signAForm(const Bureaucrat & b)
 		std::cout << b.getName() << " couldn't sign " << name << " bc he lame" << std::endl; 
 }
 
-std::string AForm::getName(void) const
+std::string Form::getName(void) const
 {
 	return this->name;
 }
 
-void	AForm::execute(const Bureaucrat & executor) const
+void	Form::execute(const Bureaucrat & executor) const
 {
 	(void)executor;
 }
 
-AForm::~AForm()
-{	std::cout << GRN << "DESTRUCTOR AForm " << name << " called" << RST << std::endl;
+Form::~Form()
+{	std::cout << GRN << "DESTRUCTOR Form " << name << " called" << RST << std::endl;
 
 }

@@ -12,11 +12,11 @@
 
 #pragma once
 
-#include "AForm.hpp"
+#include "Form.hpp"
 #include <iostream>
 #include <fstream>
 
-class ShrubberyCreationForm : public AForm
+class ShrubberyCreationForm : public Form
 {
 private:
 	std::string target;

@@ -10,9 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AForm.hpp"
+#pragma once
 
-class PresidentialPardonForm : public AForm
+#include "Form.hpp"
+
+class PresidentialPardonForm : public Form
 {
 private:
 	std::string target;

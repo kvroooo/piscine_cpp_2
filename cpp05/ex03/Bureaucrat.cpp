@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "AForm.hpp"
+#include "Form.hpp"
 
 Bureaucrat::Bureaucrat() : name("Bob"), grade(1)
 {
@@ -71,7 +71,7 @@ void	Bureaucrat::decrement(void) //plus 1
 	std::cout << *this;
 }
 
-void	Bureaucrat::executeForm(AForm const & form)
+void	Bureaucrat::executeForm(Form const & form)
 {
 	try
 	{

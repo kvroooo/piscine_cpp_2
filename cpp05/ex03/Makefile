@@ -10,15 +10,17 @@
 #                                                                              #
 # **************************************************************************** #
 
-SRCS =	main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp \
-		PresidentialPardonForm.cpp RobotomyRequestForm.cpp
+SRCS =	main.cpp Bureaucrat.cpp Form.cpp ShrubberyCreationForm.cpp \
+		PresidentialPardonForm.cpp RobotomyRequestForm.cpp \
+		Intern.cpp
+
 CC = c++
 
-CFLAGS = -Wall -Wextra -Werror -std=c++98 
+CFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
 OBJS = $(SRCS:.cpp=.o)
 
-NAME = ex02
+NAME = Intern
 
 all : $(NAME)
 

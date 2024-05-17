@@ -14,18 +14,18 @@
 #include <fstream>
 #include <string>
 
-ShrubberyCreationForm::ShrubberyCreationForm() : AForm("ShrubberyCreationForm", 145, 137)
+ShrubberyCreationForm::ShrubberyCreationForm() : Form("ShrubberyCreationForm", 145, 137)
 {
 	std::cout << GRN << "default CONSTRUCTOR Shrubberry called !" << RST << std::endl;
 	target = "default";
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm ("ShrubberyRequestForm", 145, 137), target(target)
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : Form ("ShrubberyRequestForm", 145, 137), target(target)
 {
 	std::cout << GRN << "default CONSTRUCTOR Shrubberry called !" << RST << std::endl;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm & s) : AForm(s)
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm & s) : Form(s)
 {
 	std::cout << "copy CONSTRUCTOR Shrub called" << RST << std::endl;
 	*this = s;

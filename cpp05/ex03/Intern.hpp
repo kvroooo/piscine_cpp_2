@@ -10,16 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once 
 #include <iostream>
 #include <string>
 
-#include "AForm.hpp"
+#include "Form.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 
 class Intern
 {
+private:
+	Form *f[3];
 public:
 	Intern();
 	~Intern();
@@ -27,8 +30,16 @@ public:
 
 	Intern & operator=(const Intern & i);
 
-	AForm * makeForm(std::string f_name, std::string target);
+	Form *	makeForm(const std::string &name, const std::string &target);
+	void	setTab(const std::string &target);
 
+	// class WrongStrException : public std::exception
+	// {
+	// 	virtual const char * what() const throw()
+	// 	{
+	// 		return ("err: empty string");
+	// 	}
+	// };
 };
 
 std::ostream & operator<<(std::ostream & o, const Intern & i);

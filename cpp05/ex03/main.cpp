@@ -10,15 +10,42 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AForm.hpp"
+#include "Form.hpp"
+#include "Intern.hpp"
 #include "Bureaucrat.hpp"
-#include "ShrubberyCreationForm.hpp"
-#include "PresidentialPardonForm.hpp"
-#include "RobotomyRequestForm.hpp"
+
 #include <exception>
 #include <iostream>
 
 int main(void)
-{	
+{
+	try
+	{
+		Intern PanthereRose;
+		Form *rrf;
+
+		rrf = PanthereRose.makeForm("presidential pardon", "bob");
+		if (rrf)
+			std::cout << rrf->getName() << std::endl;
+	
+	}
+	catch(std::exception & e)
+	{
+		std::cout << "oh oh" << std::endl;
+	}	
+	// try
+	// {
+	// 	Intern PanthereRose;
+	// 	Form *rrf;
+
+	// 	rrf = PanthereRose.makeForm("shrubbery ", "ploup");
+	// 	if (rrf)
+	// 		std::cout << rrf->getName() << std::endl;
+	
+	// }
+	// catch(std::exception & e)
+	// {
+	// 	std::cout << "oh oh" << std::endl;
+	// }
 
 }
