@@ -6,7 +6,7 @@
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 16:08:21 by smlamali          #+#    #+#             */
-/*   Updated: 2024/05/16 16:29:26 by smlamali         ###   ########.fr       */
+/*   Updated: 2024/05/28 17:17:13 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ std::string RobotomyRequestForm::getTarget(void) const
 
 void	RobotomyRequestForm::execute(const Bureaucrat & executor) const
 {
+	std::srand(time(0));
+	int nbr = rand() % 2;
 	if (this->getSign() == false)
 	{
 		throw FormNotSignedException();
@@ -56,10 +58,12 @@ void	RobotomyRequestForm::execute(const Bureaucrat & executor) const
 	}
 	int static i;
 
-	if (i%2==0)
-		std::cout << BCYN << "*DRRRRRRRRRRRRRRRRRRRRRRRRRRRRR*" << RST<< std::endl;
+	if (nbr%2==0)
+		std::cout << BCYN << "* DRRRRRRR *" << RST<< std::endl;
 	else
-		std::cout <<BCYN << "srry.. " << target << " has been successfully 50%% of time ^^" << RST<< std::endl;
+		std::cout << BCYN << "* * BZZ.. BZZZZZ ... * *" << RST<< std::endl;
+
+	std::cout <<BCYN << "srry.. " << target << " has been robotomized successfully 50%% of time ^^" << RST<< std::endl;
 	i++;
 }
 

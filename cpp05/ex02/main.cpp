@@ -6,7 +6,7 @@
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 15:21:06 by smlamali          #+#    #+#             */
-/*   Updated: 2024/05/16 16:49:49 by smlamali         ###   ########.fr       */
+/*   Updated: 2024/05/28 15:59:14 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,23 +21,23 @@
 int main(void)
 {	
 
-	{
-		try
-		{
-			Bureaucrat sam("Sam", 4);
-			PresidentialPardonForm bob("bob");
+	// {
+	// 	try
+	// 	{
+	// 		Bureaucrat sam("Sam", 4);
+	// 		PresidentialPardonForm bob("bob");
 
-			std::cout << bob << std::endl;
+	// 		std::cout << bob << std::endl;
 
-			// bob.beSigned(sam);
-			sam.executeForm(bob);
-		}
-		catch(std::exception & e)
-		{
-			std::cout << BPNK << "err:" << std::endl;
-			std::cout << e.what() << RST << std::endl;
-		}
-	}
+	// 		// bob.beSigned(sam);
+	// 		sam.executeForm(bob);
+	// 	}
+	// 	catch(std::exception & e)
+	// 	{
+	// 		std::cout << BPNK << "err:" << std::endl;
+	// 		std::cout << e.what() << RST << std::endl;
+	// 	}
+	// }
 	// {
 	// 	try
 	// 	{
@@ -67,18 +67,17 @@ int main(void)
 	// 	}
 	// }
 
-	// {
-	// 	try
-	// 	{
-	// 		RobotomyRequestForm robot("robot");
-	// 		Bureaucrat blip("blip", 1);
-	// 		robot.beSigned(blip);
-	// 		blip.executeForm(robot);
-	// 		blip.executeForm(robot);
-	// 	}catch (std::exception & e)
-	// 	{
-	// 		std::cout << "oh" << std::endl;
-	// 		std::cout << e.what() << RST << std::endl;
-	// 	}
-	// }
+	{
+		try
+		{
+			RobotomyRequestForm robot("robot");
+			Bureaucrat blip("blip", 1);
+			robot.beSigned(blip);
+			blip.executeForm(robot);
+		}catch (std::exception & e)
+		{
+			std::cout << "oh" << std::endl;
+			std::cout << e.what() << RST << std::endl;
+		}
+	}
 }

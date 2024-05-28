@@ -6,15 +6,13 @@
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 17:28:42 by smlamali          #+#    #+#             */
-/*   Updated: 2024/05/04 14:32:59 by smlamali         ###   ########.fr       */
+/*   Updated: 2024/05/28 16:31:35 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include "Form.hpp"
-#include <iostream>
-#include <fstream>
 
 class ShrubberyCreationForm : public Form
 {

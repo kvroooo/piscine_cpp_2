@@ -76,7 +76,7 @@ void Form::beSigned(const Bureaucrat & b)
 	   throw GradeTooLowException();  
 }
 
-void	Form::signForm(const Bureaucrat & b)
+void	Form::signAForm(const Bureaucrat & b)
 {
 	if (sign == 1)
 		std::cout << b.getName() << " signed " << name << std::endl;

@@ -1,15 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                          :+:      :+:    :+:   */
+/*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 17:28:57 by smlamali          #+#    #+#             */
-/*   Updated: 2024/05/16 17:22:17 by smlamali         ###   ########.fr       */
+/*   Updated: 2024/05/28 16:38:23 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #pragma once
 
@@ -36,8 +35,8 @@ public:
 	int				getGrade_s(void)const;
 	bool			getSign(void)const;
 	void 			beSigned(const Bureaucrat & b);
-	void			signForm(const Bureaucrat & b);
-	virtual void	execute(const Bureaucrat & executor) const;
+	void			signAForm(const Bureaucrat & b);
+	virtual void	execute(const Bureaucrat & executor) const = 0;
 
 	class	GradeTooHighException : public std::exception
 	{

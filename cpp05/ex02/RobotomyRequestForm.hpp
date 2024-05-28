@@ -6,11 +6,14 @@
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 16:05:38 by smlamali          #+#    #+#             */
-/*   Updated: 2024/05/04 14:30:24 by smlamali         ###   ########.fr       */
+/*   Updated: 2024/05/28 15:57:51 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AForm.hpp"
+#include <cstdlib>
+#include <ctime>
+
 
 class RobotomyRequestForm : public AForm
 {

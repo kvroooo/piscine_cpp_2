@@ -5,41 +5,35 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/16 16:54:23 by smlamali          #+#    #+#             */
-/*   Updated: 2024/05/16 17:22:55 by smlamali         ###   ########.fr       */
+/*   Created: 2024/05/28 16:35:14 by smlamali          #+#    #+#             */
+/*   Updated: 2024/05/28 17:23:48 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once 
-#include <iostream>
-#include <string>
+#pragma once
 
 #include "Form.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
+#include <exception>
 
 class Intern
 {
-private:
-	Form *f[3];
 public:
 	Intern();
 	~Intern();
-	Intern(const Intern & i);
+	Intern(const Intern & c);
 
-	Intern & operator=(const Intern & i);
+	Intern & operator=(const Intern & c);
 
-	Form *	makeForm(const std::string &name, const std::string &target);
-	void	setTab(const std::string &target);
+	Form * makeForm(std::string f, std::string t);
 
-	// class WrongStrException : public std::exception
-	// {
-	// 	virtual const char * what() const throw()
-	// 	{
-	// 		return ("err: empty string");
-	// 	}
-	// };
+	class WrongFormException : public std::exception
+	{
+		virtual const char * what() const throw()
+		{
+			return ("this form don't exist");
+		}
+	};
 };
-
-std::ostream & operator<<(std::ostream & o, const Intern & i);
