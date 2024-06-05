@@ -6,7 +6,7 @@
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 15:21:22 by smlamali          #+#    #+#             */
-/*   Updated: 2024/05/31 12:20:55 by smlamali         ###   ########.fr       */
+/*   Updated: 2024/06/04 13:21:02 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ public:
 	void		increment(void);
 	void		decrement(void);
 	void		executeForm(Form const & form);
+	void		signForm(Form  & f);
 
 	class	GradeTooHighException : public std::exception
 	{

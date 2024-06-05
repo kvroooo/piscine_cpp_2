@@ -6,13 +6,15 @@
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 16:05:38 by smlamali          #+#    #+#             */
-/*   Updated: 2024/05/04 14:30:24 by smlamali         ###   ########.fr       */
+/*   Updated: 2024/06/04 14:24:36 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include "Form.hpp"
+#include <cstdlib>
+#include <ctime>
 
 class RobotomyRequestForm : public Form
 {

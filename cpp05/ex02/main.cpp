@@ -6,7 +6,7 @@
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 15:21:06 by smlamali          #+#    #+#             */
-/*   Updated: 2024/05/31 12:18:07 by smlamali         ###   ########.fr       */
+/*   Updated: 2024/06/04 14:15:44 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,11 @@ int main(void)
 	{
 		try
 		{
-			ShrubberyCreationForm tree("tree");
-			Bureaucrat blip("blip", 10);
+			ShrubberyCreationForm tree("T");
+			Bureaucrat blip("blip", 149);
 
-			tree.beSigned(blip);
-			
-			// ShrubberyCreationForm bis = tree;
-			// std::cout << tree << bis << std::endl;
-			
-			// tree.execute(blip);
+			std::cout << blip << tree << std::endl;
+			blip.signForm(tree);			
 			blip.executeForm(tree);
 		}catch (std::exception & e)
 		{
@@ -38,36 +34,45 @@ int main(void)
 		}
 	}
 
-	// {
-	// 	try
-	// 	{
-	// 		Bureaucrat sam("Sam", 4);
-	// 		PresidentialPardonForm bob("bloup");
+/*	
+	{
+		try
+		{
+			Bureaucrat sam("Sam", 21);
+			PresidentialPardonForm bob("bloup");
 
-	// 		std::cout << bob;
-	// 		std::cout << sam << std::endl;
+			std::cout << std::endl<< sam << bob << std::endl;
 
-	// 		bob.beSigned(sam);
-	// 		sam.executeForm(bob);
-	// 	}
-	// 	catch(std::exception & e)
-	// 	{
-	// 		std::cout << BPNK << "err:" << std::endl;
-	// 		std::cout << e.what() << RST << std::endl;
-	// 	}
-	// }
+			sam.signForm(bob);
+			sam.executeForm(bob);
 
-	// {
-	// 	try
-	// 	{
-	// 		RobotomyRequestForm robot("robot");
-	// 		Bureaucrat blip("blip", 1);
-	// 		robot.beSigned(blip);
-	// 		blip.executeForm(robot);
-	// 	}catch (std::exception & e)
-	// 	{
-	// 		std::cout << "oh" << std::endl;
-	// 		std::cout << e.what() << RST << std::endl;
-	// 	}
-	// }
+			std::cout << bob;
+		}
+		catch(std::exception & e)
+		{
+			std::cout << BPNK << "err:" << std::endl;
+			std::cout << e.what() << RST << std::endl;
+		}
+	}
+*/
+	/*
+	{
+		try
+		{
+			RobotomyRequestForm robot("robot");
+			Bureaucrat blip("blip", 45);
+
+			std::cout << std::endl << blip << robot << std::endl;
+
+			blip.signForm(robot);
+			blip.executeForm(robot);
+
+			std::cout << robot;
+		}catch (std::exception & e)
+		{
+			std::cout << "oh" << std::endl;
+			std::cout << e.what() << RST << std::endl;
+		}
+	}
+	*/
 }

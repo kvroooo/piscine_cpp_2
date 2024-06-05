@@ -6,7 +6,7 @@
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 16:25:24 by smlamali          #+#    #+#             */
-/*   Updated: 2024/05/31 12:13:05 by smlamali         ###   ########.fr       */
+/*   Updated: 2024/06/04 14:03:31 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,6 @@ public:
 
 	PresidentialPardonForm & operator=(const PresidentialPardonForm & p);
 
-	std::string 	getTarget(void) const;
-	virtual void	execute(const Bureaucrat & executor) const;
+	std::string getTarget(void) const;
+	void		execute(const Bureaucrat & executor) const;
 };

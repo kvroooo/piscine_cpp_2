@@ -6,13 +6,15 @@
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 17:28:57 by smlamali          #+#    #+#             */
-/*   Updated: 2024/05/04 13:58:01 by smlamali         ###   ########.fr       */
+/*   Updated: 2024/06/04 13:26:40 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include "Bureaucrat.hpp"
+
+class Bureaucrat; 
 
 class Form
 {
@@ -35,7 +37,6 @@ public:
 	int			getGrade_s(void)const;
 	bool		getSign(void)const;
 	void 		beSigned(const Bureaucrat & b);
-	void		signForm(const Bureaucrat & b);
 
 	class	GradeTooHighException : public std::exception
 	{

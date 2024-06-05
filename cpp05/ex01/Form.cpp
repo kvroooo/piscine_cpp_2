@@ -6,7 +6,7 @@
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 17:29:08 by smlamali          #+#    #+#             */
-/*   Updated: 2024/05/31 11:32:39 by smlamali         ###   ########.fr       */
+/*   Updated: 2024/06/04 13:44:16 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,10 @@ Form & Form::operator=(const Form & f)
 
 std::ostream & operator<<(std::ostream & o, const Form & f)
 {
-	o << BGRN << f.getName() << " -> signed : " << f.getSign() << " | grade to sign : " << f.getGrade_s() << " | grade to execute : " << f.getGrade_e() << RST << std::endl;
+	o << BGRN << " ---------------------------------------------------------------" << std::endl;
+ 	o << "| " << f.getName() << " -> signed : " << f.getSign() << " | grade to sign : " << f.getGrade_s() << " | grade to execute : " << f.getGrade_e() << " |" << std::endl;
+	o << " ---------------------------------------------------------------" << RST << std::endl;
+	
 	return o;
 }
 
@@ -66,20 +69,9 @@ void Form::beSigned(const Bureaucrat & b)
 {
 	std::cout << BCYN << b.getName() << " try to sign " << name << "..." << RST << std::endl;
 	if (b.getGrade() <= grade_s)
-	{
 		sign = 1;
-		std::cout << BCYN << "form <" << name << "> signed successfully !" << RST << std::endl;
-	}
 	else
 		throw GradeTooLowException();  
-}
-
-void	Form::signForm(const Bureaucrat & b)
-{
-	if (sign == 1)
-		std::cout << BCYN << b.getName() << " signed " << name << RST << std::endl;
-	else
-		std::cout << BCYN << b.getName() << " couldn't sign " << name << " bc he's sleeping" << RST << std::endl; 
 }
 
 std::string Form::getName(void) const

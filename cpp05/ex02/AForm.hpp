@@ -6,7 +6,7 @@
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 17:28:57 by smlamali          #+#    #+#             */
-/*   Updated: 2024/05/31 11:47:38 by smlamali         ###   ########.fr       */
+/*   Updated: 2024/06/04 13:55:55 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include <string>
 #include "Bureaucrat.hpp"
 
-// class Bureaucrat;
+class Bureaucrat;
 
 class AForm
 {
@@ -40,7 +40,6 @@ public:
 	int				getGrade_s(void)const;
 	bool			getSign(void)const;
 	void 			beSigned(const Bureaucrat & b);
-	void			signAForm(const Bureaucrat & b);
 	virtual void	execute(const Bureaucrat & executor) const = 0;
 
 	class	GradeTooHighException : public std::exception

@@ -6,7 +6,7 @@
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 15:21:22 by smlamali          #+#    #+#             */
-/*   Updated: 2024/05/31 11:49:13 by smlamali         ###   ########.fr       */
+/*   Updated: 2024/06/04 13:55:36 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 #include <iostream>
 #include <ostream>
 #include "colors.hpp"
+#include "AForm.hpp"
 
 class AForm;
 
@@ -40,6 +41,7 @@ public:
 	void		increment(void);
 	void		decrement(void);
 	void		executeForm(AForm const & form);
+	void		signForm(AForm  & f);
 
 	class	GradeTooHighException : public std::exception
 	{

@@ -6,7 +6,7 @@
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 17:28:38 by smlamali          #+#    #+#             */
-/*   Updated: 2024/05/31 11:52:15 by smlamali         ###   ########.fr       */
+/*   Updated: 2024/06/04 14:04:31 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,4 +73,3 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 {
 	std::cout << GRN << "DESTRUCTOR Shrubberry called !" << RST << std::endl;
 }
-

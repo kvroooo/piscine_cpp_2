@@ -6,18 +6,20 @@
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 15:21:22 by smlamali          #+#    #+#             */
-/*   Updated: 2024/05/02 15:56:13 by smlamali         ###   ########.fr       */
+/*   Updated: 2024/05/31 14:13:09 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include "colors.hpp"
-
 #include <string>
 #include <exception>
 #include <iostream>
 #include <ostream>
+#include "colors.hpp"
+#include "Form.hpp"
+
+class Form;
 
 class Bureaucrat
 {
@@ -37,6 +39,7 @@ public:
 	int			getGrade(void) const;
 	void		increment(void);
 	void		decrement(void);
+	void		signForm(Form & f);
 
 	class	GradeTooHighException : public std::exception
 	{

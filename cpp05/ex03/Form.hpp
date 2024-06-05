@@ -6,7 +6,7 @@
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 17:28:57 by smlamali          #+#    #+#             */
-/*   Updated: 2024/05/31 12:19:59 by smlamali         ###   ########.fr       */
+/*   Updated: 2024/06/04 13:22:00 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ public:
 	int				getGrade_s(void)const;
 	bool			getSign(void)const;
 	void 			beSigned(const Bureaucrat & b);
-	void			signForm(const Bureaucrat & b);
 	virtual void	execute(const Bureaucrat & executor) const;
 
 	class	GradeTooHighException : public std::exception

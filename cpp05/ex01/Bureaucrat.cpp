@@ -6,11 +6,12 @@
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 15:21:49 by smlamali          #+#    #+#             */
-/*   Updated: 2024/05/31 11:16:16 by smlamali         ###   ########.fr       */
+/*   Updated: 2024/06/04 13:50:03 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+// #include "Form.hpp"
 
 Bureaucrat::Bureaucrat() : name("Bob"), grade(1)
 {
@@ -70,9 +71,28 @@ void	Bureaucrat::decrement(void) //plus 1
 	std::cout << *this << std::endl;
 }
 
+void	Bureaucrat::signForm(Form  & f)
+{
+	try
+	{
+		f.beSigned(*this);
+		if (f.getSign())
+			std::cout << BCYN << name << " signed " << f.getName() << RST << std::endl;
+	}
+	catch(std::exception & e)
+	{
+		std::cout << BCYN << name << " couldn't sign " << f.getName() << " bc he's sleeping" << std::endl; 
+		std::cout << e.what() << RST << std::endl;
+	}
+}
+
 std::ostream & operator<<(std::ostream & o, const Bureaucrat & b)
 {
-	o << BPNK << b.getName() << ", bureaucrat grade " << b.getGrade() << "." << RST << std::endl;
+	o << BPNK << " ---------------------------" << std::endl;
+	o << "| " << b.getName() << ", bureaucrat grade " << b.getGrade() << " |"  << std::endl;
+	o << " --------------------------- " << RST << std::endl;
+	o << std::endl;
+
 	return o;
 }
 

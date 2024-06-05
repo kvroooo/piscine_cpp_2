@@ -6,7 +6,7 @@
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 15:21:49 by smlamali          #+#    #+#             */
-/*   Updated: 2024/05/31 11:27:04 by smlamali         ###   ########.fr       */
+/*   Updated: 2024/06/04 13:48:01 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,9 @@ void	Bureaucrat::decrement(void) //plus 1
 
 std::ostream & operator<<(std::ostream & o, const Bureaucrat & b)
 {
-	o << BCYN << b.getName() << ", bureaucrat grade " << b.getGrade() << "." << RST << std::endl;
+	o << BPNK << " ---------------------------" << std::endl;
+	o << "| " << b.getName() << ", bureaucrat grade " << b.getGrade() << " |"  << std::endl;
+	o << BPNK << " --------------------------- " << RST << std::endl;
 	return o;
 }
 
