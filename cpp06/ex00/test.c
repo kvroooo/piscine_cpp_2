@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/04 15:13:34 by smlamali          #+#    #+#             */
-/*   Updated: 2024/06/06 16:16:54 by smlamali         ###   ########.fr       */
+/*   Created: 2024/06/06 16:28:17 by smlamali          #+#    #+#             */
+/*   Updated: 2024/06/06 16:56:15 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
+// #include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-int main(int argc ,char **argv)
+int	main(int argc, char **argv)
 {
 	if (argc == 1)
-	{
-		std::cout << "err : empty arg" << std::endl;
-		return (0);
-	}	
-
-	ScalarConverter::convert(argv[1]);
-	// try
-	// {	
-	// 
-	// }catch(std::exception & e)
-	// {
-	// 	std::cout << e.what() << std::endl;
-	// }
+		return (printf("missing arg\n"), 1);
+	printf("[%s]-> %d = %c \n", argv[1], atoi(argv[1]), atoi(argv[1]));
+	return (0);
 }
