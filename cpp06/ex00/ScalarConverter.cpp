@@ -6,11 +6,12 @@
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 17:41:56 by smlamali          #+#    #+#             */
-/*   Updated: 2024/06/06 18:17:19 by smlamali         ###   ########.fr       */
+/*   Updated: 2024/06/07 11:33:44 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
+#include <cctype>
 #include <cstring>
 
 ScalarConverter::ScalarConverter(void){}
@@ -43,15 +44,20 @@ void ScalarConverter::convert(std::string literal)
 
 void	ScalarConverter::charConvert(std::string literal)
 {
-	char	*endPtr;
-	long 	val = std::strtol(literal.c_str(), &endPtr, 10);
+	char	**endPtr = NULL;
+	long 	val = std::strtol(literal.c_str(), &(*endPtr), 0);
 
-	
+	std::cout << "val=" << val << std::endl;
 	if (literal.empty())
 		throw EmptyException();
+	std::cout << "char : ";
 	//check si [0] est dans la tab ascii / printable, len > 1 convert to int et check
 	if (literal.size() == 1 && std::isprint(static_cast<unsigned>(literal[0])))
-		std::cout << "char : " << literal[0] << std::endl;
-	// else
-	// 	std::cout << 
+		std::cout << literal[0] << std::endl;
+	else if (val >= 0 && val <= 127 && std::isprint(static_cast<char>(val)))
+	{
+		std::cout << static_cast<char>(val) << std::endl;
+	}
+	else
+		std::cout << "non displayable" << std::endl;
 }
