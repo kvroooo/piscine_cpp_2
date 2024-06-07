@@ -6,7 +6,7 @@
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 15:19:14 by smlamali          #+#    #+#             */
-/*   Updated: 2024/06/06 17:43:53 by smlamali         ###   ########.fr       */
+/*   Updated: 2024/06/07 15:59:34 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ public:
 	static void	intConvert(std::string literal);
 	static void	floatConvert(std::string literal);
 	static void	doubleConvert(std::string literal);
-
+	static void	pseudoConvert(std::string literal);
 	class EmptyException : public std::exception
 	{
 			virtual const char * what() const throw()
