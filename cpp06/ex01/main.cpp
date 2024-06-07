@@ -5,27 +5,26 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/04 15:13:34 by smlamali          #+#    #+#             */
-/*   Updated: 2024/06/07 17:54:25 by smlamali         ###   ########.fr       */
+/*   Created: 2024/06/07 16:52:25 by smlamali          #+#    #+#             */
+/*   Updated: 2024/06/07 19:00:26 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
+#include "Serialzer.hpp"
+#include <iostream>
 
-int main(int argc ,char **argv)
+int	main(void)
 {
-	if (argc == 1)
-	{
-		std::cout << "err : empty arg" << std::endl;
-		return (0);
-	}	
+	int	nbr = 10;
 
-	ScalarConverter::convert(argv[1]);
-	// try
-	// {	
-	// 
-	// }catch(std::exception & e)
-	// {
-	// 	std::cout << e.what() << std::endl;
-	// }
+	Data obj(&nbr);
+
+	std::cout << "Contenue de obj = " << *(reinterpret_cast<int*>(obj.getData())) << std::endl;
+	std::cout << "add_nbr: 	" << &obj << std::endl;
+	uintptr_t ptrInt =	Serializer::serialize(&obj);
+	Data *		ptrData = Serializer::deserialize(ptrInt);
+	std::cout << ptrData << std::endl;
+	std::cout << "Contenue de obj = " << *(reinterpret_cast<int*>((ptrData)->getData())) << std::endl;
+
+	return (0);
 }

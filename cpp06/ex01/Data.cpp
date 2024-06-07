@@ -1,31 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Data.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/04 15:13:34 by smlamali          #+#    #+#             */
-/*   Updated: 2024/06/07 17:54:25 by smlamali         ###   ########.fr       */
+/*   Created: 2024/06/07 17:59:55 by smlamali          #+#    #+#             */
+/*   Updated: 2024/06/07 18:36:51 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
+#include "Data.hpp"
 
-int main(int argc ,char **argv)
+Data::Data(void * a) : addr(a){}
+Data::~Data(){}
+
+Data::Data(const Data & d)
 {
-	if (argc == 1)
-	{
-		std::cout << "err : empty arg" << std::endl;
-		return (0);
-	}	
+	*this = d;
+}
 
-	ScalarConverter::convert(argv[1]);
-	// try
-	// {	
-	// 
-	// }catch(std::exception & e)
-	// {
-	// 	std::cout << e.what() << std::endl;
-	// }
+Data & Data::operator=(const Data & d)
+{
+	(void)d;
+	this->addr = d.getData();
+	return *this;
+}
+
+void Data::setData(void *d)
+{
+	this->addr = d;
+}
+
+void * Data::getData(void) const
+{
+	return (addr);
 }

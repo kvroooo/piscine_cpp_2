@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Data.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/04 15:13:34 by smlamali          #+#    #+#             */
-/*   Updated: 2024/06/07 17:54:25 by smlamali         ###   ########.fr       */
+/*   Created: 2024/06/07 17:57:52 by smlamali          #+#    #+#             */
+/*   Updated: 2024/06/07 18:36:44 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
+#pragma once
+#include "Serialzer.hpp"
 
-int main(int argc ,char **argv)
+class Serializer;
+
+class Data
 {
-	if (argc == 1)
-	{
-		std::cout << "err : empty arg" << std::endl;
-		return (0);
-	}	
+private:
+	void *addr;
 
-	ScalarConverter::convert(argv[1]);
-	// try
-	// {	
-	// 
-	// }catch(std::exception & e)
-	// {
-	// 	std::cout << e.what() << std::endl;
-	// }
-}
+public:
+
+	Data(void *a);
+	~Data();
+	Data(const Data & d);
+
+	Data & operator=(const Data & d);
+
+	void setData(void *d);
+	void *getData(void) const;
+};

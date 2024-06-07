@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Serialzer.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/04 15:13:34 by smlamali          #+#    #+#             */
-/*   Updated: 2024/06/07 17:54:25 by smlamali         ###   ########.fr       */
+/*   Created: 2024/06/07 16:52:25 by smlamali          #+#    #+#             */
+/*   Updated: 2024/06/07 17:59:31 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
+#pragma once
 
-int main(int argc ,char **argv)
+#include <iostream>
+#include <string>
+#include <stdint.h>
+#include "Data.hpp"
+
+class Data;
+class Serializer
 {
-	if (argc == 1)
-	{
-		std::cout << "err : empty arg" << std::endl;
-		return (0);
-	}	
+private:
+	Serializer();
+	Serializer(const Serializer & s);
 
-	ScalarConverter::convert(argv[1]);
-	// try
-	// {	
-	// 
-	// }catch(std::exception & e)
-	// {
-	// 	std::cout << e.what() << std::endl;
-	// }
-}
+	Serializer & operator=(const Serializer & s);
+
+public:
+	virtual ~Serializer();
+
+	static uintptr_t serialize(Data *ptr);
+	static Data* deserialize(uintptr_t raw);
+};
+
