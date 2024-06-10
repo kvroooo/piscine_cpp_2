@@ -6,7 +6,7 @@
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 16:52:25 by smlamali          #+#    #+#             */
-/*   Updated: 2024/06/07 19:00:26 by smlamali         ###   ########.fr       */
+/*   Updated: 2024/06/07 19:22:51 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ int	main(void)
 	Data *		ptrData = Serializer::deserialize(ptrInt);
 	std::cout << ptrData << std::endl;
 	std::cout << "Contenue de obj = " << *(reinterpret_cast<int*>((ptrData)->getData())) << std::endl;
+
+
 
 	return (0);
 }

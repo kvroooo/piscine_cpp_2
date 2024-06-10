@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Serialzer.hpp                                      :+:      :+:    :+:   */
+/*   whatever.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/07 16:52:25 by smlamali          #+#    #+#             */
-/*   Updated: 2024/06/07 19:21:57 by smlamali         ###   ########.fr       */
+/*   Created: 2024/06/10 12:46:19 by smlamali          #+#    #+#             */
+/*   Updated: 2024/06/10 13:23:26 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#pragma once 
 
 #include <iostream>
-#include <stdint.h>
-#include "Data.hpp"
+#include <string>
 
-class Data;
-class Serializer
+template <typename T>
+class Whatever
 {
-private:
-	Serializer();
-	Serializer(const Serializer & s);
-
-	Serializer & operator=(const Serializer & s);
-
 public:
-	virtual ~Serializer();
+	Whatever<T>(T const & c){};
+	~Whatever<T>(){};
+	Whatever<T>(Whatever<T> const & c){};
 
-	static uintptr_t serialize(Data *ptr);
-	static Data* deserialize(uintptr_t raw);
+private:
+	T _c;
 };
 
