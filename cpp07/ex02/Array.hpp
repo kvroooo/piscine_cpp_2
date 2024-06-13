@@ -6,7 +6,7 @@
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 15:35:55 by smlamali          #+#    #+#             */
-/*   Updated: 2024/06/13 17:07:31 by smlamali         ###   ########.fr       */
+/*   Updated: 2024/06/13 17:08:09 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 #include <exception>
 #include <iostream>
-#include <string>
 
 template <typename T>
 class Array{
