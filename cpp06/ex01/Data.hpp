@@ -11,23 +11,30 @@
 /* ************************************************************************** */
 
 #pragma once
-#include "Serialzer.hpp"
 
-class Serializer;
-
-class Data
+struct Data
 {
-private:
-	void *addr;
-
-public:
-
-	Data(void *a);
-	~Data();
-	Data(const Data & d);
-
-	Data & operator=(const Data & d);
-
-	void setData(void *d);
-	void *getData(void) const;
+	void *a;
 };
+
+
+// #include "Serialzer.hpp"
+
+// class Serializer;
+
+// class Data
+// {
+// private:
+// 	void *addr;
+
+// public:
+
+// 	Data(void *a);
+// 	~Data();
+// 	Data(const Data & d);
+
+// 	Data & operator=(const Data & d);
+
+// 	void setData(void *d);
+// 	void *getData(void) const;
+// };

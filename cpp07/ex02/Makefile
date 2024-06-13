@@ -5,20 +5,20 @@
 #                                                     +:+ +:+         +:+      #
 #    By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/06/07 16:52:25 by smlamali          #+#    #+#              #
-#    Updated: 2024/06/07 18:24:01 by smlamali         ###   ########.fr        #
+#    Created: 2024/06/10 15:35:55 by smlamali          #+#    #+#              #
+#    Updated: 2024/06/13 16:25:11 by smlamali         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS =	main.cpp Serializer.cpp 
+SRCS = main.cpp
 
-CC = c++
+CC = g++
 
-CFLAGS = -Wall -Wextra -Werror -std=c++98 
+CFLAGS = -Wall -Wextra -Werror -std=c++98 -g
+
+NAME = ex02
 
 OBJS = $(SRCS:.cpp=.o)
-
-NAME = Serializer
 
 all : $(NAME)
 

@@ -6,13 +6,15 @@
 #    By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/10 12:41:52 by smlamali          #+#    #+#              #
-#    Updated: 2024/06/10 12:45:45 by smlamali         ###   ########.fr        #
+#    Updated: 2024/06/12 15:03:05 by smlamali         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS = main.cpp
 
 CC = g++
+
+CFLAGS = -Wall -Wextra -Werror -std=c++98 
 
 NAME = ex00
 

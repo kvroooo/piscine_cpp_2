@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-SRCS =	main.cpp Serializer.cpp 
+SRCS =	main.cpp
 
 CC = c++
 
@@ -18,7 +18,7 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 OBJS = $(SRCS:.cpp=.o)
 
-NAME = Serializer
+NAME = ex02
 
 all : $(NAME)
 
