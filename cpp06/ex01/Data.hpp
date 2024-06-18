@@ -6,7 +6,7 @@
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 17:57:52 by smlamali          #+#    #+#             */
-/*   Updated: 2024/06/07 18:36:44 by smlamali         ###   ########.fr       */
+/*   Updated: 2024/06/18 16:09:18 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,13 @@
 
 struct Data
 {
-	void *a;
+	int *a;
 };
 
+// struct Data
+// {
+// 	void *a;
+// };
 
 // #include "Serialzer.hpp"
 

@@ -6,7 +6,7 @@
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 17:41:56 by smlamali          #+#    #+#             */
-/*   Updated: 2024/06/13 16:38:34 by smlamali         ###   ########.fr       */
+/*   Updated: 2024/06/18 14:59:38 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,16 +50,15 @@ void ScalarConverter::convert(std::string literal)
 void	ScalarConverter::charConvert(std::string literal)
 {
 	char	*endPtr = NULL;
-	long 	val = std::strtol(literal.c_str(), &endPtr, 0);
+	long 	val = std::strtol(literal.c_str(), &endPtr, 10);
 
 	if (literal.empty())
 		throw EmptyException();
 	std::cout << "char : ";
-	if (literal.size() == 1 && std::isprint(static_cast<unsigned>(literal[0])))
-		std::cout << literal[0] << std::endl;
-	else if (val >= 0 && val <= 127 && std::isprint(static_cast<char>(val)))
+	if (val >= 0 && val <= 127 && std::isprint(static_cast<char>(val)))
 		std::cout << static_cast<char>(val) << std::endl;
-	else if (literal.size() > 1 && val != 0)
+	else if (std::isprint(static_cast<char>(val)) == 0 && 
+			(literal.find("inf") == std::string::npos && literal.find("nan") == std::string::npos))
 		std::cout << "Non displayable" << std::endl;
 	else
 		std::cout << "impossible" << std::endl;
@@ -68,11 +67,10 @@ void	ScalarConverter::charConvert(std::string literal)
 void ScalarConverter::intConvert(std::string literal)
 {
 	char *endPtr = NULL;
-	long	val = std::strtol(literal.c_str(), &endPtr, 0);
+	long	val = std::strtol(literal.c_str(), &endPtr, 10);
 
 	if (literal.empty())
 		throw EmptyException();
-
 	std::cout << "int : ";
 	if (literal.size() == 1 && (literal[0] >= '0' && literal[0] <= '9'))
 		std::cout << val << std::endl;
@@ -80,6 +78,8 @@ void ScalarConverter::intConvert(std::string literal)
 		std::cout << static_cast<int>(literal[0]) << std::endl;
 	else if (literal.size() > 1 && val != 0)
 		std::cout << static_cast<int>(val) << std::endl;
+	else if (val == 0 && literal[0] == '0')
+		std::cout << val << std::endl;
 	else
 		std::cout << "impossible" << std::endl;
 }
@@ -88,7 +88,7 @@ void	ScalarConverter::floatConvert(std::string literal)
 {
 	char *endPtr = NULL;
 	float val = std::strtof(literal.c_str(),&endPtr);
-	long  tmp = std::strtol(literal.c_str(), &endPtr, 0);
+	long  tmp = std::strtol(literal.c_str(), &endPtr, 10);
 	if (literal.empty())
 		throw EmptyException();
 	
@@ -100,6 +100,8 @@ void	ScalarConverter::floatConvert(std::string literal)
 		std::cout << static_cast<float>(literal[0]);
 	else  if (literal.size() > 1 && val != 0)
 		std::cout << static_cast<float>(val);
+	else if (val == 0)
+		std::cout << 0;
 	else
 	{
 		std::cout << "impossible" << std::endl;
@@ -119,13 +121,17 @@ void	ScalarConverter::doubleConvert(std::string literal)
 
 	if (literal.empty())
 		throw EmptyException();
+
 	std::cout << "double : ";
+
 	if (literal.size() == 1 && (literal[0] >= '0' && literal[0] <= '9'))
 		std::cout << val;
 	else if (literal.size() == 1)
 		std::cout << static_cast<double>(literal[0]);
 	else  if (literal.size() > 1 && val != 0)
 		std::cout << static_cast<double>(val);
+	else if (val == tmp)
+		std::cout << 0;
 	else
 	{
 		std::cout << "impossible" << std::endl;

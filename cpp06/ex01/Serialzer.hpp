@@ -6,7 +6,7 @@
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 16:52:25 by smlamali          #+#    #+#             */
-/*   Updated: 2024/06/07 17:59:31 by smlamali         ###   ########.fr       */
+/*   Updated: 2024/06/18 15:02:31 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include <stdint.h>
 #include "Data.hpp"
 
-class Data;
+// class Data;
 class Serializer
 {
 private:

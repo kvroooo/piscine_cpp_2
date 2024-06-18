@@ -6,7 +6,7 @@
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 15:13:34 by smlamali          #+#    #+#             */
-/*   Updated: 2024/06/07 17:54:25 by smlamali         ###   ########.fr       */
+/*   Updated: 2024/06/18 13:35:46 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,5 @@ int main(int argc ,char **argv)
 		std::cout << "err : empty arg" << std::endl;
 		return (0);
 	}	
-
 	ScalarConverter::convert(argv[1]);
-	// try
-	// {	
-	// 
-	// }catch(std::exception & e)
-	// {
-	// 	std::cout << e.what() << std::endl;
-	// }
 }
