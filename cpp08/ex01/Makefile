@@ -5,13 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/06/13 17:10:21 by smlamali          #+#    #+#              #
-#    Updated: 2024/06/19 14:54:26 by smlamali         ###   ########.fr        #
+#    Created: 2024/06/19 14:53:40 by smlamali          #+#    #+#              #
+#    Updated: 2024/06/19 15:12:53 by smlamali         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-
-SRCS = main.cpp
+SRCS = main.cpp Span.cpp
 
 CC = c++
 
