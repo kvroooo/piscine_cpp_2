@@ -6,9 +6,11 @@
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 14:53:51 by smlamali          #+#    #+#             */
-/*   Updated: 2024/06/19 15:12:33 by smlamali         ###   ########.fr       */
+/*   Updated: 2024/06/19 17:35:57 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#pragma once 
 
 #include <iostream>
 #include <exception>
@@ -26,9 +28,11 @@ public:
 
 	Span & operator=(const  Span & s);
 
-	void	addNumber(int n);
-	void	shortestSpan(void) const;
-	void	longestSpan(void) const;
+	void			addNumber(int nbr);
+	void			shortestSpan(void) const;
+	void			longestSpan(void) const;
+	unsigned int	getN(void) const;
+	void			printList(void)const;
 
 	class TooMuchException : public std::exception
 	{

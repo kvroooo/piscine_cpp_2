@@ -6,11 +6,12 @@
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 17:33:00 by smlamali          #+#    #+#             */
-/*   Updated: 2024/06/19 14:49:13 by smlamali         ###   ########.fr       */
+/*   Updated: 2024/06/19 17:25:44 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once 
+#pragma once
+
 #include "easyfind.hpp"
 #include <exception>
 
