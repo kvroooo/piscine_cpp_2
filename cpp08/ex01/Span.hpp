@@ -6,7 +6,7 @@
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 14:53:51 by smlamali          #+#    #+#             */
-/*   Updated: 2024/06/20 15:13:53 by smlamali         ###   ########.fr       */
+/*   Updated: 2024/06/21 17:23:01 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Span
 {
 private:
 	unsigned int N;
-	std::list<unsigned int> l;
+	std::list<int> l;
 public:
 	Span(unsigned int N);
 	~Span();
@@ -30,8 +30,9 @@ public:
 	Span & operator=(const  Span & s);
 
 	void			addNumber(int nbr);
-	void			shortestSpan(void)	const;
-	void			longestSpan(void)	const;
+	void			addNumbers(int first, int last);
+	unsigned int	shortestSpan(void)	const;
+	unsigned int	longestSpan(void)	const;
 	unsigned int	getN(void) const;
 	void			printList(void)const;
 

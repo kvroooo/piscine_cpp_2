@@ -5,32 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/19 14:54:54 by smlamali          #+#    #+#             */
-/*   Updated: 2024/06/21 17:23:46 by smlamali         ###   ########.fr       */
+/*   Created: 2024/06/21 13:55:31 by smlamali          #+#    #+#             */
+/*   Updated: 2024/06/21 15:12:19 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Span.hpp"
+#include "MutantStack.hpp"
+
 
 int	main(void)
 {
-	// static int a[5] = {2, 6, 7, 8, 9};
+	std::stack<char> a;
+	a.push('m');
+	a.push('a');
+	a.push('s');
 
-	Span sp = Span(10);
-
-	sp.addNumber(1);
-	sp.addNumber(2);
-	sp.addNumber(3);
-	sp.addNumber(4);
-	sp.addNumber(5);
-
-	std::cout << "longest span : " << sp.longestSpan() << std::endl;
-	std::cout << "shortest span: " << sp.shortestSpan() << std::endl;
-
-	sp.printList();
-
-	sp.addNumbers(6, 10);
-	sp.printList();
-	std::cout << "longest span : " << sp.longestSpan() << std::endl;
-	std::cout << "shortest span: " << sp.shortestSpan() << std::endl;
+	while (!a.empty())
+	{
+		std::cout << a.top() << " ";
+		a.pop();
+	}
 }

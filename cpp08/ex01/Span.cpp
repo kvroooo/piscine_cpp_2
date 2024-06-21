@@ -6,7 +6,7 @@
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 14:53:51 by smlamali          #+#    #+#             */
-/*   Updated: 2024/06/20 18:06:15 by smlamali         ###   ########.fr       */
+/*   Updated: 2024/06/21 17:23:33 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,8 @@ unsigned int Span::getN(void) const
 
 void	Span::printList(void) const
 {
-	std::list<unsigned int>::const_iterator lst;
-	std::list<unsigned int>::const_iterator lsti = l.end();
+	std::list<int>::const_iterator lst;
+	std::list<int>::const_iterator lsti = l.end();
 
 	std::cout << " --- TAB --- " << std::endl;
 	for(lst = l.begin(); lst != lsti; lst++)
@@ -71,33 +71,31 @@ void	Span::addNumber(int nbr)
 
 }
 
-void	Span::longestSpan(void) const
+unsigned int	Span::longestSpan(void) const
 {
 	try
 	{
 		if (l.size() < 2 || l.size() == 0)
 			throw NotEnoughException();
-		std::cout << "longest span : ";
-		std::cout << l.back() - l.front() << std::endl;
 	}catch(std::exception & e)
-	{
-		std::cout << e.what() << std::endl;
-	}
+	{ std::cout << e.what() << std::endl;}
+	return (l.back() - l.front());
 }
 
-void	Span::shortestSpan(void) const
+unsigned int	Span::shortestSpan(void) const
 {
+	int calc = l.back() - l.front();
 	try
 	{
-		int c;
-		int calc = l.back() - l.front();
-		std::cout << "calc=" << calc << std::endl;
-		std::list<unsigned int>::const_iterator it = l.begin();
-		std::list<unsigned int>::const_iterator ite = l.end();
-		std::list<unsigned int>::const_iterator i;
-
 		if (l.size() < 2 || l.size() == 0)
 			throw NotEnoughException();
+
+		int c;
+		
+		std::list<int>::const_iterator it = l.begin();
+		std::list<int>::const_iterator ite = l.end();
+		std::list<int>::const_iterator i;
+
 		for (it = l.begin(); it != ite; it++)
 		{
 			for (i = l.begin(); i != ite; i++)
@@ -109,14 +107,15 @@ void	Span::shortestSpan(void) const
 						c *= - 1;
 					if (c <= calc)
 						calc = c;
-					std::cout << "it= " << *it << " itnext=" <<  *i;
-				std::cout << " calc=" << calc << std::endl;
 				}
 			}
 		}
-		std::cout << std::endl << "shortest span : " << calc << std::endl;
 	}catch(std::exception & e)
-	{
-		std::cout << e.what() << std::endl;
-	}
+	{std::cout << e.what() << std::endl;}
+	return calc;
+}
+
+void	Span::addNumbers(int first, int last)
+{
+		l.assign(first, last);
 }
