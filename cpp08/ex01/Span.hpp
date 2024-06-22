@@ -6,7 +6,7 @@
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 14:53:51 by smlamali          #+#    #+#             */
-/*   Updated: 2024/06/21 17:23:01 by smlamali         ###   ########.fr       */
+/*   Updated: 2024/06/22 16:51:30 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <exception>
 #include <list>
 #include <algorithm>
+#include <limits>
 
 class Span
 {
@@ -30,7 +31,7 @@ public:
 	Span & operator=(const  Span & s);
 
 	void			addNumber(int nbr);
-	void			addNumbers(int first, int last);
+	void			addNumbers(std::list<int> liste);
 	unsigned int	shortestSpan(void)	const;
 	unsigned int	longestSpan(void)	const;
 	unsigned int	getN(void) const;

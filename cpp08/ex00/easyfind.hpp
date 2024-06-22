@@ -6,7 +6,7 @@
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 17:11:53 by smlamali          #+#    #+#             */
-/*   Updated: 2024/06/21 14:19:45 by smlamali         ###   ########.fr       */
+/*   Updated: 2024/06/22 17:58:47 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include <exception>
 #include <iostream>
 #include <list>
+#include <algorithm>
 
 template <typename T>
 void	easyfind(T l, int n);

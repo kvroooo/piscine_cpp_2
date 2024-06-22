@@ -1,0 +1,23 @@
+ex00: 
+conversion d'un literal (valeur avant qu'elle soit donner a un type)
+en int float char et double
+	compilation : make
+				  ./ex00 [literal]
+
+				  exemple -> ./ex00 "*"
+				  			 ./ex00 42
+				  			 ./ex00 A
+				  			 ./ex00 0
+				  			 ./ex00 36.02f
+
+ex01:
+lis le sujet sah
+	compilation: 
+	 make
+	 ./Serialize
+
+ex02:
+	decouverte dynamic cast
+	compilation :
+		make 
+		./ex02

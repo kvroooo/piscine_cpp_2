@@ -6,18 +6,19 @@
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 14:54:54 by smlamali          #+#    #+#             */
-/*   Updated: 2024/06/21 17:23:46 by smlamali         ###   ########.fr       */
+/*   Updated: 2024/06/22 16:50:12 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
+#include <limits>
 
 int	main(void)
 {
-	// static int a[5] = {2, 6, 7, 8, 9};
+	// std::list<int>;
+	Span sp = Span(10000);
 
-	Span sp = Span(10);
-
+	std::cout <<   "N = " << sp.getN() << std::endl;
 	sp.addNumber(1);
 	sp.addNumber(2);
 	sp.addNumber(3);
@@ -29,8 +30,7 @@ int	main(void)
 
 	sp.printList();
 
-	sp.addNumbers(6, 10);
-	sp.printList();
-	std::cout << "longest span : " << sp.longestSpan() << std::endl;
-	std::cout << "shortest span: " << sp.shortestSpan() << std::endl;
+	// sp.printList();
+	// std::cout << "longest span : " << sp.longestSpan() << std::endl;
+	// std::cout << "shortest span: " << sp.shortestSpan() << std::endl;
 }
