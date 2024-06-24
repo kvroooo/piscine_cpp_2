@@ -32,31 +32,9 @@ void	iter( T *arr, size_t len, void (*f)(T const &))
 }
 
 template <typename T>
-void	iter( T *arr, size_t len, void (*f)(T &))
-{
-	if (!arr)
-		return ;
-	try
-	{
-		for (size_t i=0; i<len; i++)
-			f(arr[i]);
-	}catch (std::exception & e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-}
-
-template <typename T>
 void f(T const & a)
 {
 	std::cout << a << std::endl;
-}
-
-template <typename T>
-void add(T & a)
-{
-	std::cout << a << std::endl;
-	a += 1;
 }
 
 // test iter with const ft

@@ -17,11 +17,7 @@ int main() {
 	int tab[3] = {6, 7, 8};
 
 	std::cout << " === iter === " << std::endl;
-	::iter(tab, 3, add);
-
-	std::cout << " === iter === " << std::endl;
-	for (int i = 0; i<3; i++)
-		std::cout << tab[i] << std::endl;
+	::iter(tab, 3, f);
 
   return 0;
 }
