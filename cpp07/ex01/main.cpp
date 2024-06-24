@@ -12,34 +12,22 @@
 
 #include "iter.hpp"
 
-int main(void)
-{
+
+int main() {
 	int tab[3] = {6, 7, 8};
-	// char tab[4] = {'a', 'b', 'c'};
-	// float tab[3] = {2.0f, 3.0, 4.52f};
-	
-	// std::cout << &tab << std::endl;
-	std::cout << " === before iter === " << std::endl;
-	
-	::iter(tab, 3, f);
-	
-	std::cout << " === after iter === " << std::endl;
-	
-	std::cout << tab[0] << std::endl;
-	std::cout << tab[1] << std::endl;
-	std::cout << tab[2] << std::endl;
+
+	std::cout << " === iter === " << std::endl;
+	::iter(tab, 3, add);
+
+	std::cout << " === iter === " << std::endl;
+	for (int i = 0; i<3; i++)
+		std::cout << tab[i] << std::endl;
+
+  return 0;
 }
 
+ // int tab[] = { 0, 1, 2, 3, 4 };
+  // Awesome tab2[5];
 
-// void	iter(int * arr, int len, void(*f)(int & a))
-// {
-// 	std::cout << arr << std::endl;
-// 	for (int i=0; i<len; i++)
-// 		f(arr[i]);
-// }
-
-// void f(int & a)
-// {
-// 	std::cout << a << std::endl;
-// 	a = a + 1;
-// }
+  // iter( tab, 5, print<const int> );
+  // iter( tab2, 5, print<Awesome> );

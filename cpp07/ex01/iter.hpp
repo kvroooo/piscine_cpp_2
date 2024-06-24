@@ -15,8 +15,8 @@
 #include <exception>
 #include <iostream>
 
-template <typename T, typename function = void (*)(T&)>
-void	iter( T * arr, size_t len, function f)
+template <typename T>
+void	iter( T *arr, size_t len, void (*f)(T const &))
 {
 	if (!arr)
 		return ;
@@ -32,9 +32,45 @@ void	iter( T * arr, size_t len, function f)
 }
 
 template <typename T>
-void f(T & a)
+void	iter( T *arr, size_t len, void (*f)(T &))
 {
-	std::cout << a << std::endl;
-	a = a + 1;
+	if (!arr)
+		return ;
+	try
+	{
+		for (size_t i=0; i<len; i++)
+			f(arr[i]);
+	}catch (std::exception & e)
+	{
+		std::cout << e.what() << std::endl;
+	}
 }
 
+template <typename T>
+void f(T const & a)
+{
+	std::cout << a << std::endl;
+}
+
+template <typename T>
+void add(T & a)
+{
+	std::cout << a << std::endl;
+	a += 1;
+}
+
+// test iter with const ft
+// class Awesome
+// {
+//   public:
+//     Awesome( void ) : _n( 42 ) { return; }
+//     int get( void ) const { return this->_n; }
+//   private:
+//     int _n;
+// };
+
+// std::ostream & operator<<( std::ostream & o, Awesome const & rhs )
+// {
+//   o << rhs.get();
+//   return o;
+// }
