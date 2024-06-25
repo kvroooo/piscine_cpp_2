@@ -6,7 +6,7 @@
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 15:35:55 by smlamali          #+#    #+#             */
-/*   Updated: 2024/06/21 14:47:28 by smlamali         ###   ########.fr       */
+/*   Updated: 2024/06/25 15:44:32 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ public:
 		std::cout << "constructor called" << std::endl;
 		_array = new T [1];
 		_array[0] = T();
-
 	}
 	~Array()
 	{

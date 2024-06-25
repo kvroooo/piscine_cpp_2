@@ -28,13 +28,9 @@ T const & max(T & a, T & b)
 }
 
 template <typename T>
-void const swap(T & a, T &b)
+void swap(T & a, T & b)
 {
-	std::cout << "before swap : " << a << "," << b << std::endl;
-	std::cout << "adr_a = " << &a << ", adr_b =" << &b << std::endl;
 	T tmp = a;
 	a = b;
 	b = tmp;
-	std::cout << "after swap : " << a << "," << b << std::endl;
-	std::cout << "adr_a = " << &a << ", adr_b =" << &b << std::endl;
 }

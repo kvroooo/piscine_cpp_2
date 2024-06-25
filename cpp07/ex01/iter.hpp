@@ -6,7 +6,7 @@
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 14:05:51 by smlamali          #+#    #+#             */
-/*   Updated: 2024/06/11 17:41:30 by smlamali         ###   ########.fr       */
+/*   Updated: 2024/06/25 15:42:51 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <iostream>
 
 template <typename T>
-void	iter( T *arr, size_t len, void (*f)(T const &))
+void	iter( T *arr, size_t len, void (*f)(T &))
 {
 	if (!arr)
 		return ;
@@ -28,27 +28,18 @@ void	iter( T *arr, size_t len, void (*f)(T const &))
 	{
 		std::cout << e.what() << std::endl;
 	}
-
 }
 
 template <typename T>
-void f(T const & a)
+void ft_print(T & a)
 {
 	std::cout << a << std::endl;
 }
 
-// test iter with const ft
-// class Awesome
-// {
-//   public:
-//     Awesome( void ) : _n( 42 ) { return; }
-//     int get( void ) const { return this->_n; }
-//   private:
-//     int _n;
-// };
-
-// std::ostream & operator<<( std::ostream & o, Awesome const & rhs )
-// {
-//   o << rhs.get();
-//   return o;
-// }
+template< typename T >
+void ft_add(T & x)
+{
+  std::cout << x << std::endl;
+  x += 1;
+  return;
+}
