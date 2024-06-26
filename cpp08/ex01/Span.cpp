@@ -6,11 +6,12 @@
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 14:53:51 by smlamali          #+#    #+#             */
-/*   Updated: 2024/06/22 16:54:08 by smlamali         ###   ########.fr       */
+/*   Updated: 2024/06/26 16:24:49 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
+#include <cstddef>
 #include <exception>
 #include <sys/types.h>
 
@@ -115,7 +116,10 @@ unsigned int	Span::shortestSpan(void) const
 	return calc;
 }
 
-void	Span::addNumbers(std::list<int> liste)
+void	Span::addNumbers(size_t n, int nbr)
 {
-	std::list<int>::const_iterator it
+	l.insert(l.end(), n, nbr);
+	
+// 	for (auto it = nlist.begin(); it != nlist.end(); it++)
+// 		addNumber(*it);
 }

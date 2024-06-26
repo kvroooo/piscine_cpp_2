@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   MutantStack.cpp.tpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/21 13:55:31 by smlamali          #+#    #+#             */
-/*   Updated: 2024/06/26 16:48:39 by smlamali         ###   ########.fr       */
+/*   Created: 2024/06/25 13:53:09 by smlamali          #+#    #+#             */
+/*   Updated: 2024/06/26 17:14:33 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "MutantStack.hpp"
+// #include "MutantStack.hpp"
 
+// template <typename T>
+// MutantStack::MutantStack<T>()
+// {
+// 	std::cout << "constructor MS called" << std::endl;
+// 	_s = new T(); 
+// }
 
-int	main(void)
-{
-	std::stack<char> a;
-	a.push('m');
-	a.push('a');
-	a.push('s');
+// MutantStack::~MutantStack()
+// {
+// 	delete _s;
+// 	std::cout << "destructor MS called !" << std::endl;
+// }
 
-	while (!a.empty())
-	{
-		std::cout << "top : " << a.top() << std::endl;
-		a.pop();
-	}
-}
+// // T & MutantStack<T>::top(void)const
+// // {
+
+// // }

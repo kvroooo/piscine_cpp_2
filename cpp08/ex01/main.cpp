@@ -6,7 +6,7 @@
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 14:54:54 by smlamali          #+#    #+#             */
-/*   Updated: 2024/06/22 16:50:12 by smlamali         ###   ########.fr       */
+/*   Updated: 2024/06/26 16:15:07 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,22 +15,32 @@
 
 int	main(void)
 {
-	// std::list<int>;
-	Span sp = Span(10000);
+	{
+		Span a = Span(5);
 
-	std::cout <<   "N = " << sp.getN() << std::endl;
-	sp.addNumber(1);
-	sp.addNumber(2);
-	sp.addNumber(3);
-	sp.addNumber(4);
-	sp.addNumber(5);
+		a.printList();
+		a.addNumbers(100, 6);
+		a.printList();
+	}
+	{
+		// std::list<int>;
 
-	std::cout << "longest span : " << sp.longestSpan() << std::endl;
-	std::cout << "shortest span: " << sp.shortestSpan() << std::endl;
+		Span sp = Span(10000);
 
-	sp.printList();
+		std::cout <<   "N = " << sp.getN() << std::endl;
+		sp.addNumber(1);
+		sp.addNumber(2);
+		sp.addNumber(3);
+		sp.addNumber(4);
+		sp.addNumber(5);
 
-	// sp.printList();
-	// std::cout << "longest span : " << sp.longestSpan() << std::endl;
-	// std::cout << "shortest span: " << sp.shortestSpan() << std::endl;
+		std::cout << "longest span : " << sp.longestSpan() << std::endl;
+		std::cout << "shortest span: " << sp.shortestSpan() << std::endl;
+
+		sp.printList();
+		//addnum
+		// sp.printList();
+		// std::cout << "longest span : " << sp.longestSpan() << std::endl;
+		// std::cout << "shortest span: " << sp.shortestSpan() << std::endl;
+	}
 }
