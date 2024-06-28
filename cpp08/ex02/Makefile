@@ -6,7 +6,7 @@
 #    By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/21 13:55:25 by smlamali          #+#    #+#              #
-#    Updated: 2024/06/21 15:12:55 by smlamali         ###   ########.fr        #
+#    Updated: 2024/06/28 15:27:47 by smlamali         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CC = c++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
-NAME = ex00
+NAME = ex02
 
 OBJS = $(SRCS:.cpp=.o)
 

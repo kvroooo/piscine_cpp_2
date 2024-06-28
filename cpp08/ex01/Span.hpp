@@ -6,7 +6,7 @@
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 14:53:51 by smlamali          #+#    #+#             */
-/*   Updated: 2024/06/26 16:13:58 by smlamali         ###   ########.fr       */
+/*   Updated: 2024/06/28 17:39:39 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <exception>
 #include <list>
 #include <algorithm>
-#include <limits>
+#include <sys/types.h>
 
 class Span
 {

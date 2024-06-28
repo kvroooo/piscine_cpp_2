@@ -6,14 +6,11 @@
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 14:53:51 by smlamali          #+#    #+#             */
-/*   Updated: 2024/06/26 16:24:49 by smlamali         ###   ########.fr       */
+/*   Updated: 2024/06/28 17:39:13 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
-#include <cstddef>
-#include <exception>
-#include <sys/types.h>
 
 Span::Span(unsigned int N) : N(N)
 {
@@ -63,10 +60,7 @@ void	Span::addNumber(int nbr)
 		if (l.size() >= N)
 			throw TooMuchException();
 		else
-		{
 			l.push_back(nbr);
-			l.sort();
-		}
 	}catch(std::exception & e)
 	{ std::cout << e.what() << std::endl;}
 
@@ -78,6 +72,7 @@ unsigned int	Span::longestSpan(void) const
 	{
 		if (l.size() < 2 || l.size() == 0)
 			throw NotEnoughException();
+		l.sort();
 	}catch(std::exception & e)
 	{ std::cout << e.what() << std::endl;}
 	return (l.back() - l.front());
@@ -118,8 +113,10 @@ unsigned int	Span::shortestSpan(void) const
 
 void	Span::addNumbers(size_t n, int nbr)
 {
-	l.insert(l.end(), n, nbr);
-	
+	(void)nbr;
+	(void)n;
+	// l.insert(l.end(), n, nbr);
+	l.insert(l.end(), 5, 10);
 // 	for (auto it = nlist.begin(); it != nlist.end(); it++)
 // 		addNumber(*it);
 }
