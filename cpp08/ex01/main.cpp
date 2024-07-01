@@ -6,43 +6,40 @@
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 14:54:54 by smlamali          #+#    #+#             */
-/*   Updated: 2024/06/28 16:11:00 by smlamali         ###   ########.fr       */
+/*   Updated: 2024/07/01 17:26:23 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
-#include <limits>
 
 int	main(void)
 {
-	// {
-	// 	Span a = Span(5);
+	Span a = Span(0);
 
-	// 	a.printList();
-	// 	a.addNumbers(100, 6);
-	// 	a.printList();
-	// }
+	std::cout << " ---- ADD NUMBER ---- " << std::endl;
+	a.addNumber(6);
+	a.addNumber(3);
+	a.addNumber(17);
+	a.addNumber(9);
+	a.addNumber(11);
+	a.show();
+
+	std::cout << std::endl << "--- LONGEST/SHORTEST SPAN ---" << std::endl;
+	try
 	{
-		// std::list<int>;
+		std::cout << "longest span: " << a.longestSpan() << std::endl;
+		std::cout << "shortest span: " << a.shortestSpan() << std::endl;
+	}catch(std::exception & e)
+	{std::cout << e.what() << std::endl;}
 
-		Span sp = Span(10000);
+	std::cout << std::endl << " ---- ADD NUMBERS ---- " << std::endl;
 
-		std::cout <<   "N = " << sp.getN() << std::endl;
-		sp.addNumber(6);
-		sp.addNumber(3);
-		sp.addNumber(17);
-		sp.addNumber(9);
-		sp.addNumber(11);
+	std::vector<int> b;
 
-		sp.printList();
+	b.push_back(1);
+	b.push_back(2);
+	b.push_back(3);
 
-		std::cout << "longest span : " << sp.longestSpan() << std::endl;
-
-		sp.printList();
-		// std::cout << "shortest span: " << sp.shortestSpan() << std::endl;
-		//addnum
-		// sp.printList();
-		// std::cout << "longest span : " << sp.longestSpan() << std::endl;
-		// std::cout << "shortest span: " << sp.shortestSpan() << std::endl;
-	}
+	a.addNumber(b, b.begin(), b.end());
+	a.show();
 }

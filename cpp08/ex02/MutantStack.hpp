@@ -6,7 +6,7 @@
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/21 13:56:44 by smlamali          #+#    #+#             */
-/*   Updated: 2024/06/26 17:36:26 by smlamali         ###   ########.fr       */
+/*   Updated: 2024/07/01 17:49:14 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,10 @@ private:
 	std::stack<T> _s;
 public:
 	MutantStack<T>(){std::cout << "constructor called" << std::endl;};
-	~MutantStack(){delete _s;}
-	// MutantStack<T>(const MutantStack<T> & m)
-	// {
-	// 	delete _s;
-	// 	_s = new T();
-	// }
+	~MutantStack(){}
+	MutantStack<T>(const MutantStack<T> & m);
 
-	MutantStack<T> & operator=(const MutantStack & m);
+	MutantStack<T> & operator=(const MutantStack<T> & m);
 
 	T & 	top(void)const;
 	bool	empty(void)const;

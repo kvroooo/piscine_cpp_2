@@ -6,7 +6,7 @@
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 14:53:51 by smlamali          #+#    #+#             */
-/*   Updated: 2024/06/28 17:39:39 by smlamali         ###   ########.fr       */
+/*   Updated: 2024/07/01 16:53:10 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,34 +14,38 @@
 
 #include <iostream>
 #include <exception>
-#include <list>
+#include <vector>
 #include <algorithm>
 #include <sys/types.h>
 
 class Span
 {
 private:
-	unsigned int N;
-	std::list<int> l;
+	unsigned int len;
+	std::vector<int> v;
+
+	int	fun(std::vector<int>);
+
 public:
-	Span(unsigned int N);
+	Span(unsigned int size);
 	~Span();
 	Span(const Span & s);
 
-	Span & operator=(const  Span & s);
+	Span & operator=(const Span & s);
 
-	void			addNumber(int nbr);
-	void			addNumbers(size_t n, int nbr);
-	unsigned int	shortestSpan(void)	const;
-	unsigned int	longestSpan(void)	const;
-	unsigned int	getN(void) const;
-	void			printList(void)const;
+	void				show(void)const;
+	void				addNumber(int nbr);
+	void				addNumber(std::vector<int> nvect, std::vector<int>::iterator begin, std::vector<int>::iterator end);
+	int					shortestSpan(void);
+	int					longestSpan(void);
+	unsigned int		getLen(void) const;
+	std::vector<int>	getVect(void)const;
 
 	class TooMuchException : public std::exception
 	{
 		virtual const char * what() const throw()
 		{
-			return "error: list full, can't add more number;";
+			return "error: vector full, can't add more number;";
 		}
 	};
 
@@ -49,7 +53,7 @@ public:
 	{
 		virtual const char * what() const throw()
 		{
-			return "error: not enough number in list to find distance";
+			return "error: not enough number in vector to find span";
 		}
 	};
 };

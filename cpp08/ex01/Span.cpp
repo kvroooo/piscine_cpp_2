@@ -6,13 +6,15 @@
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 14:53:51 by smlamali          #+#    #+#             */
-/*   Updated: 2024/06/28 17:39:13 by smlamali         ###   ########.fr       */
+/*   Updated: 2024/07/01 17:04:28 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
+#include <exception>
+#include <iterator>
 
-Span::Span(unsigned int N) : N(N)
+Span::Span(unsigned int size) : len(size)
 {
 	std::cout << "constructor Span called !" << std::endl;
 }
@@ -28,95 +30,85 @@ Span::Span(const Span & s)
 	*this = s;
 }
 
-Span & Span::operator=(const Span & s)
+Span & Span::operator=(const Span & s) 
 {
-	N = s.getN();
-	//recup liste :>
+	std::cout << "copy assignement operator Span called !" << std::endl;
+
+	len = s.getLen();
+	v = s.getVect();
 	return *this;
 }
 
-unsigned int Span::getN(void) const
+unsigned int Span::getLen(void) const
 {
-	return N;
+	return len;
 }
 
-void	Span::printList(void) const
+std::vector<int> Span::getVect(void) const
 {
-	std::list<int>::const_iterator lst;
-	std::list<int>::const_iterator lsti = l.end();
+	return v;
+}
 
-	std::cout << " --- TAB --- " << std::endl;
-	for(lst = l.begin(); lst != lsti; lst++)
-		std::cout << "[" << *lst << "]";
-	std::cout << std::endl; 
-	std::cout << " ----------- " << std::endl;
 
+void	Span::show(void) const
+{
+	for	(size_t i=0; i<v.size(); i++)
+		std::cout << v[i] << std::endl;
 }
 
 void	Span::addNumber(int nbr)
 {
 	try
-	{	
-		if (l.size() >= N)
+	{
+		if (v.size() >= len)
 			throw TooMuchException();
-		else
-			l.push_back(nbr);
-	}catch(std::exception & e)
-	{ std::cout << e.what() << std::endl;}
+		v.push_back(nbr);
 
+	}catch(std::exception & e)
+	{
+		std::cout << e.what()  << std::endl;
+	}
 }
 
-unsigned int	Span::longestSpan(void) const
+void	Span::addNumber(std::vector<int> nvect, std::vector<int>::iterator begin, std::vector<int>::iterator end)
 {
 	try
 	{
-		if (l.size() < 2 || l.size() == 0)
-			throw NotEnoughException();
-		l.sort();
-	}catch(std::exception & e)
-	{ std::cout << e.what() << std::endl;}
-	return (l.back() - l.front());
-}
-
-unsigned int	Span::shortestSpan(void) const
-{
-	int calc = l.back() - l.front();
-	try
-	{
-		if (l.size() < 2 || l.size() == 0)
-			throw NotEnoughException();
-
-		int c;
-		
-		std::list<int>::const_iterator it = l.begin();
-		std::list<int>::const_iterator ite = l.end();
-		std::list<int>::const_iterator i;
-
-		for (it = l.begin(); it != ite; it++)
-		{
-			for (i = l.begin(); i != ite; i++)
-			{
-				if (i != it)
-				{
-					c = *it - *i;
-					if (c < 0)
-						c *= - 1;
-					if (c <= calc)
-						calc = c;
-				}
-			}
-		}
+		if (nvect.size() + v.size() > len)
+			throw TooMuchException();
+		v.insert(v.end(), begin, end);
 	}catch(std::exception & e)
 	{std::cout << e.what() << std::endl;}
-	return calc;
 }
 
-void	Span::addNumbers(size_t n, int nbr)
+
+int Span::shortestSpan(void)
 {
-	(void)nbr;
-	(void)n;
-	// l.insert(l.end(), n, nbr);
-	l.insert(l.end(), 5, 10);
-// 	for (auto it = nlist.begin(); it != nlist.end(); it++)
-// 		addNumber(*it);
+	int shortest = longestSpan();
+	// try
+	// {
+	if (v.size() < 2)
+		throw NotEnoughException();
+	std::sort(v.begin(), v.end());
+	for (size_t i=0; i<v.size(); i++)
+	{
+		if (i < (v.size() - 1) 
+			&& v[i + 1] - v[i] < shortest)
+			shortest = v[i + 1] - v[i];
+	}
+	// }catch(std::exception & e)
+	// {std::cout << e.what() << std::endl;}
+	return shortest;
+}
+
+int Span::longestSpan(void)
+{
+	// try
+	// {
+	if (v.size() < 2)
+		throw NotEnoughException();
+	std::sort(v.begin(), v.end());
+	// }catch (std::exception & e)
+	// {std::cout << e.what() << std::endl;}
+	return (v.back() - v.front());
 }
