@@ -5,18 +5,18 @@
 #                                                     +:+ +:+         +:+      #
 #    By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/06/21 13:55:25 by smlamali          #+#    #+#              #
-#    Updated: 2024/07/07 14:12:43 by smlamali         ###   ########.fr        #
+#    Created: 2024/07/07 14:12:40 by smlamali          #+#    #+#              #
+#    Updated: 2024/07/07 14:15:29 by smlamali         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = main.cpp
+SRCS = main.cpp BitcoinExchange.cpp
 
 CC = c++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
-NAME = ex02
+NAME = btc
 
 OBJS = $(SRCS:.cpp=.o)
 

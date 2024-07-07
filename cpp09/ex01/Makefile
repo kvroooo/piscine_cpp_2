@@ -5,18 +5,18 @@
 #                                                     +:+ +:+         +:+      #
 #    By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/06/21 13:55:25 by smlamali          #+#    #+#              #
-#    Updated: 2024/07/07 14:12:43 by smlamali         ###   ########.fr        #
+#    Created: 2024/07/07 14:21:28 by smlamali          #+#    #+#              #
+#    Updated: 2024/07/07 15:25:37 by smlamali         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = main.cpp
+SRCS = main.cpp RPN.cpp
 
 CC = c++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
-NAME = ex02
+NAME = RPN
 
 OBJS = $(SRCS:.cpp=.o)
 
