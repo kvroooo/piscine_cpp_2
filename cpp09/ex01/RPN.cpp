@@ -6,7 +6,7 @@
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/07 14:21:28 by smlamali          #+#    #+#             */
-/*   Updated: 2024/07/08 18:00:34 by smlamali         ###   ########.fr       */
+/*   Updated: 2024/07/08 18:59:02 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ Rpn::Rpn(int argc, char *argv)
 		if (argc != 2)
 			throw WrongArgException();
 		str = argv;
-		std::cout << "str=" << str << std::endl;
 		Rpn::check();
 		Rpn::addNbrs();
 	}catch(std::exception & e)
@@ -58,16 +57,22 @@ void	Rpn::check()
 		else if ((str[i] < '0' || str[i] > '9'))
 			throw WrongArgException();
 	}
-	std::cout << "nstr=" << str << std::endl;
 }
 
 void	Rpn::addNbrs(void)
 {
-	size_t i;
-	for (i = 0; i < str.size() && !isOp(str[i]); i++)
-		s.push(static_cast<int>(str[i]) - '0');
-	if (isOp(str[i]))
-		s.push(calc(i, str[i-1], str[i-2]));
+	size_t i = 0;
+	while (i < str.size())
+	{	
+		for (i = 0; i < str.size() && !isOp(str[i]); i++)
+			s.push(static_cast<int>(str[i]) - '0');
+		Rpn::printS();
+
+		if (isOp(str[i]))
+			s.push(calc(i, static_cast<int>(str[i-1]) - '0', static_cast<int>(str[i-2]) - '0'));
+		std::cout << "--- AFTER CALC ---" << std::endl;
+		Rpn::printS();
+	}
 }
 
 int Rpn::calc(int i, int a, int b)
@@ -90,5 +95,12 @@ std::string Rpn::getStr(void) const
 
 void	Rpn::printS(void) const
 {
-	
+	std::stack<int> bis(s);
+
+	while (!bis.empty())
+	{
+		std::cout << "|"<< bis.top() << "|" << std::endl;
+		std::cout << "---" << std::endl;
+		bis.pop();
+	}
 }
