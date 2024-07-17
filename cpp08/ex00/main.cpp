@@ -23,6 +23,7 @@ int main(void)
 		l.push_back(4);
 		l.push_back(2);
 		l.push_back(4);
+		
 		l.push_back(6);
 
 		easyfind(l, 10);
