@@ -6,7 +6,7 @@
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 14:53:51 by smlamali          #+#    #+#             */
-/*   Updated: 2024/07/01 16:53:10 by smlamali         ###   ########.fr       */
+/*   Updated: 2024/07/21 18:16:54 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 #include <vector>
 #include <algorithm>
 #include <sys/types.h>
+
+#include "dark_pink.hpp"
 
 class Span
 {
@@ -42,18 +44,8 @@ public:
 	std::vector<int>	getVect(void)const;
 
 	class TooMuchException : public std::exception
-	{
-		virtual const char * what() const throw()
-		{
-			return "error: vector full, can't add more number;";
-		}
-	};
+	{virtual const char * what() const throw();};
 
 	class NotEnoughException : public std::exception
-	{
-		virtual const char * what() const throw()
-		{
-			return "error: not enough number in vector to find span";
-		}
-	};
+	{virtual const char * what() const throw();};
 };

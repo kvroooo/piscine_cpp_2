@@ -6,7 +6,7 @@
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/21 13:56:44 by smlamali          #+#    #+#             */
-/*   Updated: 2024/07/08 18:11:24 by smlamali         ###   ########.fr       */
+/*   Updated: 2024/07/21 19:09:35 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 #include <stack>
 #include <deque>
 #include <list>
+
+#include "dark_pink.hpp"
 
 template < typename T, typename Container = std::deque<T> >
 class MutantStack : public std::stack<T>

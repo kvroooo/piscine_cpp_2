@@ -6,7 +6,7 @@
 #    By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/19 14:53:40 by smlamali          #+#    #+#              #
-#    Updated: 2024/07/01 16:37:28 by smlamali         ###   ########.fr        #
+#    Updated: 2024/07/21 17:57:15 by smlamali         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CC = c++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
-NAME = span
+NAME = Span
 
 OBJS = $(SRCS:.cpp=.o)
 

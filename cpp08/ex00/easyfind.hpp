@@ -6,7 +6,7 @@
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 17:11:53 by smlamali          #+#    #+#             */
-/*   Updated: 2024/07/17 19:35:30 by smlamali         ###   ########.fr       */
+/*   Updated: 2024/07/21 14:38:05 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,5 @@ class EmptyListException : public std::exception
 		return "error: list empty !";
 	}
 };
+
 #include "easyfind.tpp"

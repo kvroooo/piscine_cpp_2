@@ -6,7 +6,7 @@
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 14:53:51 by smlamali          #+#    #+#             */
-/*   Updated: 2024/07/01 17:04:28 by smlamali         ###   ########.fr       */
+/*   Updated: 2024/07/21 18:38:11 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,16 @@ Span::Span(unsigned int size) : len(size)
 Span::~Span()
 {
 	std::cout << "destructor Span called !" << std::endl;
+}
+
+const char * Span::TooMuchException::what() const throw()
+{
+	return "error: vector full, can't add more number;";
+}
+
+const char * Span::NotEnoughException::what() const throw()
+{
+	return "error: not enough number in vector to find span";
 }
 
 Span::Span(const Span & s)
@@ -52,8 +62,10 @@ std::vector<int> Span::getVect(void) const
 
 void	Span::show(void) const
 {
+	std::cout << "span contain : ";
 	for	(size_t i=0; i<v.size(); i++)
-		std::cout << v[i] << std::endl;
+		std::cout << "[" << v[i] << "]";
+	std::cout << std::endl;
 }
 
 void	Span::addNumber(int nbr)
@@ -74,6 +86,9 @@ void	Span::addNumber(std::vector<int> nvect, std::vector<int>::iterator begin, s
 {
 	try
 	{
+		std::cout << "begin=" << *begin << "| end=" << *end << std::endl;
+		// std::cout << "size=" << v.size() << std::endl;
+		// std::cout << "nsize=" << nvect.size() << std::endl;
 		if (nvect.size() + v.size() > len)
 			throw TooMuchException();
 		v.insert(v.end(), begin, end);

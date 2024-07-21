@@ -6,7 +6,7 @@
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 14:54:54 by smlamali          #+#    #+#             */
-/*   Updated: 2024/07/01 17:26:23 by smlamali         ###   ########.fr       */
+/*   Updated: 2024/07/21 19:06:58 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,19 @@
 
 int	main(void)
 {
-	Span a = Span(0);
+	Span a = Span(5);
 
-	std::cout << " ---- ADD NUMBER ---- " << std::endl;
+	std::cout << BPNK << " ---- ADD NUMBER ---- " << RST << std::endl;
 	a.addNumber(6);
 	a.addNumber(3);
 	a.addNumber(17);
 	a.addNumber(9);
 	a.addNumber(11);
-	a.show();
+	// for (int i=0; i < 5; i++)
+	// 	a.addNumber(i);
+	// a.show();
 
-	std::cout << std::endl << "--- LONGEST/SHORTEST SPAN ---" << std::endl;
+	std::cout << BPNK << std::endl << "--- LONGEST/SHORTEST SPAN ---" << RST << std::endl;
 	try
 	{
 		std::cout << "longest span: " << a.longestSpan() << std::endl;
@@ -32,14 +34,15 @@ int	main(void)
 	}catch(std::exception & e)
 	{std::cout << e.what() << std::endl;}
 
-	std::cout << std::endl << " ---- ADD NUMBERS ---- " << std::endl;
+	std::cout << BPNK << std::endl << " ---- ADD NUMBERS ---- " << RST <<std::endl;
 
 	std::vector<int> b;
-
-	b.push_back(1);
-	b.push_back(2);
-	b.push_back(3);
+	// for (int i=0; i < 10500; i++)
+	// 	a.addNumber(i);
+	b.push_back(16);
+	b.push_back(17);
+	b.push_back(18);
 
 	a.addNumber(b, b.begin(), b.end());
-	a.show();
+	// a.show();
 }
