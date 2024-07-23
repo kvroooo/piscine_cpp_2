@@ -6,13 +6,12 @@
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 17:33:00 by smlamali          #+#    #+#             */
-/*   Updated: 2024/07/21 17:22:40 by smlamali         ###   ########.fr       */
+/*   Updated: 2024/07/23 16:28:24 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include <algorithm>
 #include "easyfind.hpp"
 
 template <typename T>

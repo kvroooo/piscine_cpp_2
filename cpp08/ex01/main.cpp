@@ -6,7 +6,7 @@
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 14:54:54 by smlamali          #+#    #+#             */
-/*   Updated: 2024/07/21 19:06:58 by smlamali         ###   ########.fr       */
+/*   Updated: 2024/07/23 16:59:13 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	main(void)
 {
-	Span a = Span(5);
+	Span a = Span(20000);
 
 	std::cout << BPNK << " ---- ADD NUMBER ---- " << RST << std::endl;
 	a.addNumber(6);
@@ -24,7 +24,7 @@ int	main(void)
 	a.addNumber(11);
 	// for (int i=0; i < 5; i++)
 	// 	a.addNumber(i);
-	// a.show();
+	a.show();
 
 	std::cout << BPNK << std::endl << "--- LONGEST/SHORTEST SPAN ---" << RST << std::endl;
 	try
@@ -39,10 +39,10 @@ int	main(void)
 	std::vector<int> b;
 	// for (int i=0; i < 10500; i++)
 	// 	a.addNumber(i);
-	b.push_back(16);
-	b.push_back(17);
-	b.push_back(18);
+	b.push_back(20);
+	b.push_back(21);
+	b.push_back(22);
 
 	a.addNumber(b, b.begin(), b.end());
-	// a.show();
+	a.show();
 }

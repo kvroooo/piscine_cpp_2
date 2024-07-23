@@ -6,7 +6,7 @@
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 14:53:51 by smlamali          #+#    #+#             */
-/*   Updated: 2024/07/21 18:38:11 by smlamali         ###   ########.fr       */
+/*   Updated: 2024/07/23 16:45:02 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 Span::Span(unsigned int size) : len(size)
 {
 	std::cout << "constructor Span called !" << std::endl;
+	std::cout << BCYN << "MAX SIZE = " << size << RST << std::endl;
 }
 
 Span::~Span()
@@ -75,7 +76,7 @@ void	Span::addNumber(int nbr)
 		if (v.size() >= len)
 			throw TooMuchException();
 		v.push_back(nbr);
-
+		show();
 	}catch(std::exception & e)
 	{
 		std::cout << e.what()  << std::endl;
@@ -86,9 +87,6 @@ void	Span::addNumber(std::vector<int> nvect, std::vector<int>::iterator begin, s
 {
 	try
 	{
-		std::cout << "begin=" << *begin << "| end=" << *end << std::endl;
-		// std::cout << "size=" << v.size() << std::endl;
-		// std::cout << "nsize=" << nvect.size() << std::endl;
 		if (nvect.size() + v.size() > len)
 			throw TooMuchException();
 		v.insert(v.end(), begin, end);
