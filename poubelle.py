@@ -9,6 +9,7 @@ def dico_search(liste, nbr):
 			end = mid
 	return end
 
+# ---------- START ------------------
 x = [8, 9, 3, 5, 7, 4, 2, 1]
 
 paires = [[x[i], x[i+1]] for i in range(0, len(x), 2)]
@@ -18,13 +19,14 @@ for pair in paires:
 		pair[0], pair[1] = pair[1], pair[0]
 
 print(paires)
+print("")
 
-print("sort big paires")
+print("-- sort big number in each pair--")
 
 paires.sort(key=lambda e: e[1])
 print(paires)
 
-s = []
+s=[]
 p=[]
 for pair in paires:
 	s.append(pair[1])
@@ -36,12 +38,11 @@ print(p)
 
 print("------")
 
-s.insert(0, p[0])
 p.pop(0)
 print(s)
 print(p)
 
-print("recherceh dico :")
+print("recherche dico pour placer partie gauche de paire :")
 
 for rest in p:
 	idx = dico_search(s, rest)
