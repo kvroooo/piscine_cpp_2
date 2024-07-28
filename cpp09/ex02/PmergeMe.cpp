@@ -6,11 +6,12 @@
 /*   By: smlamali <smlamali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/07 14:22:08 by smlamali          #+#    #+#             */
-/*   Updated: 2024/07/17 19:40:33 by smlamali         ###   ########.fr       */
+/*   Updated: 2024/07/28 18:11:13 by smlamali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PmergeMe.hpp"
+#include <iterator>
 
 PmergeMe::PmergeMe(char **arg)
 {
@@ -70,11 +71,39 @@ void	PmergeMe::addVect(char **argv)
 	int i = 1;
 	while (argv[i])
 	{
-		vectA.push_back(atoi(argv[i]));
+		x.push_back(atoi(argv[i]));
 		i++;
 	}
-	std::cout << "VectorA : ";
-	for (size_t i = 0; i < vectA.size(); i++)
-		std::cout << "[" << vectA[i] << "]";
+	std::cout << "X : ";
+	showVect(x);
+
+	ft_swap(x);
+	std::cout << "X swap: ";
+	showVect(x);
+	// std::cout << "X sorted:";
+	// showVect(x);
+	// for (size_t i=0; i<x.size(); i++)
+	// {
+	// 	if (i%2==0)
+	// 		b.push_back(x[i]);
+	// 	else
+	// 		s.push_back(x[i]);
+	// }
+	// ft_sort(s);
+	// ft_sort(b);
+	// std::cout << "S : ";
+	// showVect(s);
+	// std::cout << "B : ";
+	// showVect(b);
+}
+
+void	PmergeMe::ft_swap(std::vector<int> x)
+{
+}
+
+void	PmergeMe::showVect(std::vector<int> vect)const
+{
+	for(size_t i=0; i<vect.size(); i++)
+			std::cout << "["<<vect[i]<<"]";
 	std::cout << std::endl;
 }

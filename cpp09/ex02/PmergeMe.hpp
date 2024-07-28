@@ -1,4 +1,4 @@
-/* ************************************************************************** */
+ /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   PmergeMe.hpp                                       :+:      :+:    :+:   */
@@ -19,7 +19,9 @@
 class PmergeMe
 {
 private:
-	std::vector<int> vectA;
+	std::vector<int> x;
+	std::vector<int> s;
+	std::vector<int> b;
 
 public:
 	PmergeMe(char **arg);
@@ -29,11 +31,13 @@ public:
 	PmergeMe & operator=(const PmergeMe & p);
 
 	void		checker(char **arg);
+	void		ft_swap(std::vector<int> x);
 	void		printSeq(char **argv);
 	void		addVect(char **argv);
+	void		showVect(std::vector<int> vect)const;
 	class ErrorException : public std::exception
 	{
 		virtual const char * what() const throw()
-		{return ("error");}
+		{return ("Error");}
 	};
 };
