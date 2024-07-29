@@ -15,6 +15,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <vector>
+#include <algorithm>
 
 class PmergeMe
 {
@@ -30,11 +31,12 @@ public:
 
 	PmergeMe & operator=(const PmergeMe & p);
 
-	void		checker(char **arg);
-	void		ft_swap(std::vector<int> x);
-	void		printSeq(char **argv);
-	void		addVect(char **argv);
-	void		showVect(std::vector<int> vect)const;
+	void				checker(char **arg);
+	void				printSeq(char **argv);
+	void				addVect(char **argv);
+	void				showVect(std::vector<int> vect)const;
+	std::vector<int>	
+	std::vector<int>	ft_swap(std::vector<int> x);
 	class ErrorException : public std::exception
 	{
 		virtual const char * what() const throw()
